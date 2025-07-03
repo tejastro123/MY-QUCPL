@@ -1,7 +1,10 @@
 
 site_name: QuCPL Documentation
 site_url: https://tejastro123.github.io/qucpl
-repo_url: https://github.com/tejastro123/
+repo_url: https://github.com/tejastro123/MY-QuCPL
+repo_name: GitHub
+site_description: Documentation for QuCPL, a programming language designed for quantum computing.
+site_author: Tejas.M
 theme:
   name: material
   palette:
