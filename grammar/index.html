@@ -582,6 +582,10 @@
 
 <h1 id="grammar">Grammar</h1>
 <p>QuCPL uses Lark (PEG) to define its grammar.</p>
+<p>PEG-style rule definitions</p>
+<p>Supports declarations, gates, and measurement</p>
+<p>Useful for contributors extending the syntax</p>
+<p>Directly from grammar.lark:</p>
 <pre><code>?start: stmt+
 
 ?stmt: qubit_decl &quot;;&quot;

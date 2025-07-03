@@ -75,6 +75,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#ast-examples" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -344,6 +349,19 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Ast
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -355,6 +373,65 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ast-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      AST Examples
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="AST Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bell_astjson" class="md-nav__link">
+    <span class="md-ellipsis">
+      bell_ast.json
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ghz_astjson" class="md-nav__link">
+    <span class="md-ellipsis">
+      ghz_ast.json
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#teleportation_astjson" class="md-nav__link">
+    <span class="md-ellipsis">
+      teleportation_ast.json
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -554,6 +631,56 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ast-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      AST Examples
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="AST Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bell_astjson" class="md-nav__link">
+    <span class="md-ellipsis">
+      bell_ast.json
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ghz_astjson" class="md-nav__link">
+    <span class="md-ellipsis">
+      ghz_ast.json
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#teleportation_astjson" class="md-nav__link">
+    <span class="md-ellipsis">
+      teleportation_ast.json
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -573,61 +700,56 @@
 
   <h1>Ast</h1>
 
-<p>Bell circuit AST examplr :</p>
-<pre><code>{
+<h2 id="ast-examples">AST Examples</h2>
+<p>The <strong>Abstract Syntax Tree (AST)</strong> is the structured representation generated after parsing a <code>.qucpl</code> file. This tree retains the syntactic structure of the source code and serves as the input to the QuCPL compiler.</p>
+<p>Below are AST examples for three common quantum programs:</p>
+<h3 id="bell_astjson"><code>bell_ast.json</code></h3>
+<pre><code class="language-json">{
   &quot;type&quot;: &quot;Program&quot;,
   &quot;body&quot;: [
-    {
-      &quot;type&quot;: &quot;QubitDecl&quot;,
-      &quot;qubits&quot;: [
-        [
-          &quot;q0&quot;,
-          &quot;q1&quot;
-        ]
-      ]
-    },
-    {
-      &quot;type&quot;: &quot;QuantumOp&quot;,
-      &quot;gate&quot;: &quot;h&quot;,
-      &quot;qubits&quot;: [
-        &quot;q0&quot;
-      ]
-    },
-    {
-      &quot;type&quot;: &quot;QuantumOp&quot;,
-      &quot;gate&quot;: &quot;cx&quot;,
-      &quot;qubits&quot;: [
-        &quot;q0&quot;,
-        &quot;q1&quot;
-      ]
-    },
-    {
-      &quot;type&quot;: &quot;Measure&quot;,
-      &quot;qubits&quot;: [
-        [
-          &quot;q0&quot;,
-          &quot;q1&quot;
-        ]
-      ],
-      &quot;classical&quot;: [
-        [
-          &quot;c0&quot;,
-          &quot;c1&quot;
-        ]
-      ]
-    },
-    {
-      &quot;type&quot;: &quot;Print&quot;,
-      &quot;args&quot;: [
-        [
-          &quot;c0&quot;,
-          &quot;c1&quot;
-        ]
-      ]
-    }
+    {&quot;type&quot;: &quot;QubitDeclaration&quot;, &quot;qubits&quot;: [&quot;q0&quot;, &quot;q1&quot;]},
+    {&quot;type&quot;: &quot;GateOperation&quot;, &quot;gate&quot;: &quot;H&quot;, &quot;args&quot;: [&quot;q0&quot;]},
+    {&quot;type&quot;: &quot;GateOperation&quot;, &quot;gate&quot;: &quot;CX&quot;, &quot;args&quot;: [&quot;q0&quot;, &quot;q1&quot;]},
+    {&quot;type&quot;: &quot;Measurement&quot;, &quot;qubit&quot;: &quot;q0&quot;, &quot;target&quot;: &quot;c0&quot;},
+    {&quot;type&quot;: &quot;Measurement&quot;, &quot;qubit&quot;: &quot;q1&quot;, &quot;target&quot;: &quot;c1&quot;}
   ]
 }
 </code></pre>
+<h3 id="ghz_astjson"><code>ghz_ast.json</code></h3>
+<pre><code class="language-json">{
+  &quot;type&quot;: &quot;Program&quot;,
+  &quot;body&quot;: [
+    {&quot;type&quot;: &quot;QubitDeclaration&quot;, &quot;qubits&quot;: [&quot;q0&quot;, &quot;q1&quot;, &quot;q2&quot;]},
+    {&quot;type&quot;: &quot;GateOperation&quot;, &quot;gate&quot;: &quot;H&quot;, &quot;args&quot;: [&quot;q0&quot;]},
+    {&quot;type&quot;: &quot;GateOperation&quot;, &quot;gate&quot;: &quot;CX&quot;, &quot;args&quot;: [&quot;q0&quot;, &quot;q1&quot;]},
+    {&quot;type&quot;: &quot;GateOperation&quot;, &quot;gate&quot;: &quot;CX&quot;, &quot;args&quot;: [&quot;q0&quot;, &quot;q2&quot;]},
+    {&quot;type&quot;: &quot;Measurement&quot;, &quot;qubit&quot;: &quot;q0&quot;, &quot;target&quot;: &quot;c0&quot;},
+    {&quot;type&quot;: &quot;Measurement&quot;, &quot;qubit&quot;: &quot;q1&quot;, &quot;target&quot;: &quot;c1&quot;},
+    {&quot;type&quot;: &quot;Measurement&quot;, &quot;qubit&quot;: &quot;q2&quot;, &quot;target&quot;: &quot;c2&quot;}
+  ]
+}
+</code></pre>
+<h3 id="teleportation_astjson"><code>teleportation_ast.json</code></h3>
+<pre><code class="language-json">{
+  &quot;type&quot;: &quot;Program&quot;,
+  &quot;body&quot;: [
+    {&quot;type&quot;: &quot;QubitDeclaration&quot;, &quot;qubits&quot;: [&quot;q0&quot;, &quot;q1&quot;, &quot;q2&quot;]},
+    {&quot;type&quot;: &quot;GateOperation&quot;, &quot;gate&quot;: &quot;H&quot;, &quot;args&quot;: [&quot;q1&quot;]},
+    {&quot;type&quot;: &quot;GateOperation&quot;, &quot;gate&quot;: &quot;CX&quot;, &quot;args&quot;: [&quot;q1&quot;, &quot;q2&quot;]},
+    {&quot;type&quot;: &quot;GateOperation&quot;, &quot;gate&quot;: &quot;CX&quot;, &quot;args&quot;: [&quot;q0&quot;, &quot;q1&quot;]},
+    {&quot;type&quot;: &quot;GateOperation&quot;, &quot;gate&quot;: &quot;H&quot;, &quot;args&quot;: [&quot;q0&quot;]},
+    {&quot;type&quot;: &quot;Measurement&quot;, &quot;qubit&quot;: &quot;q0&quot;, &quot;target&quot;: &quot;c0&quot;},
+    {&quot;type&quot;: &quot;Measurement&quot;, &quot;qubit&quot;: &quot;q1&quot;, &quot;target&quot;: &quot;c1&quot;}
+  ]
+}
+</code></pre>
+<p>Each AST object contains:</p>
+<ul>
+<li><code>QubitDeclaration</code>: Declares one or more quantum registers</li>
+<li><code>GateOperation</code>: Describes a single- or multi-qubit gate</li>
+<li><code>Measurement</code>: Maps quantum measurements to classical bits</li>
+</ul>
+<p>These JSON structures are saved to <code>ast.json</code> by the parser and passed to the compiler for IR generation.</p>
 
 
 

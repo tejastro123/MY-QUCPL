@@ -580,6 +580,30 @@ CX q0, q1;
 measure q0 -&gt; c0;
 measure q1 -&gt; c1;
 </code></pre>
+<p>ghz.qucpl:</p>
+<pre><code>qubit q0, q1, q2;
+H q0;
+CX q0, q1;
+CX q0, q2;
+measure q0 -&gt; c0;
+measure q1 -&gt; c1;
+measure q2 -&gt; c2;
+</code></pre>
+<p>teleportation.qucpl:</p>
+<pre><code>qubit q0, q1, q2;
+qop h q1;
+qop cx q1, q2;
+qop cx q0, q1;
+qop h q0;
+measure q0, q1 -&gt; c0, c1;
+if (c1 == 1) {
+  qop x q2;
+}
+if (c0 == 1) {
+  qop z q2;
+}
+print q2;
+</code></pre>
 
 
 

@@ -574,6 +574,10 @@
   <h1>Compiler</h1>
 
 <p>The compiler walks the AST and generates a JSON intermediate representation:</p>
+<p>Walks AST and generates IR</p>
+<p>JSON-based IR design follows schema from ir_schema_docs.md</p>
+<p>Clear separation of instructions and control_flow blocks</p>
+<p>From compiler.ipynb:</p>
 <pre><code>import json
 
 def flatten(lst):

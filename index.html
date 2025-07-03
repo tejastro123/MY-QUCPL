@@ -73,6 +73,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#qucpl-documentation" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -231,6 +236,21 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="." class="md-nav__link md-nav__link--active">
         
@@ -243,6 +263,61 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-quantum-computing" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔭 What is Quantum Computing?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-a-qubit" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 What is a Qubit?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introducing-qucpl" class="md-nav__link">
+    <span class="md-ellipsis">
+      💻 Introducing QuCPL
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-youll-find-in-this-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      📦 What You'll Find in This Documentation
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -551,6 +626,52 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-quantum-computing" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔭 What is Quantum Computing?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-a-qubit" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 What is a Qubit?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introducing-qucpl" class="md-nav__link">
+    <span class="md-ellipsis">
+      💻 Introducing QuCPL
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-youll-find-in-this-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      📦 What You'll Find in This Documentation
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -569,11 +690,51 @@
   
 
 
-  <h1>Home</h1>
-
-<p>QuCPL Documentation</p>
-<p>Welcome to the QuCPL Documentation — the official guide for using, understanding, and contributing to the Quantum Computing Programming Language.</p>
-<p>QuCPL is a domain-specific language (DSL) built on Python, designed for educational and research purposes. It combines custom syntax, a parser/compiler system, quantum circuit simulation, and a GUI application.</p>
+<h1 id="qucpl-documentation">QuCPL Documentation</h1>
+<p>Welcome to the <strong>QuCPL</strong> Documentation — the official guide for using, understanding, and contributing to the Quantum Computing Programming Language.</p>
+<p>QuCPL is a domain-specific language (DSL) built on Python, designed for educational and research purposes. It combines custom syntax, a parser/compiler system, quantum circuit simulation, and a GUI application for an intuitive and visual approach to quantum programming.</p>
+<hr />
+<h2 id="what-is-quantum-computing">🔭 What is Quantum Computing?</h2>
+<p>Quantum computing is a transformative field of computing that leverages the principles of quantum mechanics to perform operations on data. Unlike classical computers, which use binary bits (<code>0</code> or <code>1</code>), quantum computers use <strong>qubits</strong> that can exist in superpositions of states, allowing them to process vast combinations of possibilities simultaneously.</p>
+<p>Quantum computers can solve certain problems exponentially faster than classical ones — such as factoring large numbers (Shor’s algorithm), searching unsorted databases (Grover’s algorithm), and simulating quantum systems in physics, chemistry, and cryptography.</p>
+<hr />
+<h2 id="what-is-a-qubit">🧠 What is a Qubit?</h2>
+<p>A <strong>qubit</strong> (quantum bit) is the fundamental unit of quantum information. It can be in the state <code>|0⟩</code>, <code>|1⟩</code>, or any complex linear combination:</p>
+<pre><code>|ψ⟩ = α|0⟩ + β|1⟩
+</code></pre>
+<p>Where:</p>
+<ul>
+<li><code>α</code> and <code>β</code> are complex probability amplitudes</li>
+<li><code>|α|² + |β|² = 1</code></li>
+<li>The state collapses to either <code>|0⟩</code> or <code>|1⟩</code> upon measurement</li>
+</ul>
+<p>Qubits can also be <strong>entangled</strong>, meaning their states are correlated no matter the physical distance between them — a crucial property for quantum teleportation and quantum communication.</p>
+<hr />
+<h2 id="introducing-qucpl">💻 Introducing QuCPL</h2>
+<p><strong>QuCPL</strong> (Quantum Computing Programming Language) is an educational-friendly quantum language designed to simplify quantum programming. It features:</p>
+<ul>
+<li>A readable syntax inspired by C/Python</li>
+<li>A custom compiler that outputs an intermediate JSON representation</li>
+<li>A simulator built on Qiskit</li>
+<li>A GUI studio with tabs for writing, simulating, and visualizing circuits</li>
+</ul>
+<p>QuCPL abstracts the complexity of backend circuit manipulation and allows users to focus on <strong>algorithmic thinking and quantum logic</strong>.</p>
+<hr />
+<h2 id="what-youll-find-in-this-documentation">📦 What You'll Find in This Documentation</h2>
+<p>This site is structured to help you get started with QuCPL and dive deep into its components:</p>
+<ul>
+<li>📘 <strong>Language Reference</strong>: Syntax, gates, measurement rules</li>
+<li>✍️ <strong>Writing QuCPL Programs</strong>: Sample code and real examples</li>
+<li>📐 <strong>Grammar &amp; Parser</strong>: The PEG grammar used and parsing pipeline</li>
+<li>🛠️ <strong>Compiler</strong>: AST to IR translation and IR schema</li>
+<li>📊 <strong>Visualization &amp; Simulation</strong>: How results are generated and displayed</li>
+<li>🖥️ <strong>GUI Application</strong>: Interface features and usage</li>
+<li>💾 <strong>Outputs Explained</strong>: All exportable files and formats</li>
+<li>💡 <strong>Developer Notes</strong>: Internal architecture and contribution tips</li>
+</ul>
+<p>Use the navigation bar to explore each section in depth. Whether you're a student, educator, or enthusiast, <strong>QuCPL</strong> is your gateway to practical quantum programming.</p>
+<hr />
+<p>Happy coding, and welcome to the quantum era! ✨</p>
 <p>run mkdocs: mkdocs serve</p>
 
 
