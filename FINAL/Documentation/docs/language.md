@@ -2,7 +2,15 @@
 Keywords:
 qubit, measure, H, X, Y, Z, CX, CCX, reset
 
-Syntax Example:
+Includes:
+
+List of supported gate operations
+
+Basic QuCPL syntax with examples
+
+Comment style
+
+Clean, simple syntax like:
 ```
 qubit q0, q1;
 H q0;

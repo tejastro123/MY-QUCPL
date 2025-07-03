@@ -2,6 +2,13 @@
 
 QuCPL uses Lark (PEG) to define its grammar.
 
+PEG-style rule definitions
+
+Supports declarations, gates, and measurement
+
+Useful for contributors extending the syntax
+
+Directly from grammar.lark:
 ```
 ?start: stmt+
 

@@ -1,4 +1,11 @@
-Uses Lark for parsing:
+
+From parser.ipynb:
+
+Loads grammar.lark 
+
+Parses source code → AST using Lark
+
+Saves as ast.json
 
 ```
 from lark import Lark, Transformer, v_args

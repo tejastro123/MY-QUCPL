@@ -1,4 +1,12 @@
 Uses Qiskit to draw circuits:
+
+Circuit drawing via circuit_drawer(qc)
+
+Measurement histogram via plot_histogram()
+
+State visualization via plot_bloch_multivector()
+
+From visualize.ipynb:
 ```
 import json
 import matplotlib.pyplot as plt

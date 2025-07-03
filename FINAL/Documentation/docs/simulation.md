@@ -1,4 +1,18 @@
-Simulation.py code :Outputs include final statevector, probabilities, histogram and counts.
+Simulation.py code :
+
+   Outputs include final statevector
+
+   probabilities
+
+   histogram and counts
+
+Uses Qiskit’s AerSimulator
+
+Saves and fetches statevector, counts
+
+Handles IR-to-circuit building and Qiskit execution
+
+From simulation.ipynb:
 ```
 import json
 from qiskit import transpile, QuantumCircuit

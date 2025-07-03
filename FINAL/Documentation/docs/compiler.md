@@ -1,4 +1,12 @@
 The compiler walks the AST and generates a JSON intermediate representation:
+
+Walks AST and generates IR
+
+JSON-based IR design follows schema from ir_schema_docs.md
+
+Clear separation of instructions and control_flow blocks
+
+From compiler.ipynb:
 ```
 import json
 

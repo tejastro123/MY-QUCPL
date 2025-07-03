@@ -1,7 +1,8 @@
 Launched via: python final_app.py
 
-Features: Code editor, Run button, Tabs for Circuit, Statevector, Histogram, Bloch, Export buttons, Error logs and status messages
+Features: Code editor, Run button, Tabs for Circuit(AST, IR, Simulation, Circuit, Bloch), Statevector, Histogram, Bloch, Export buttons, Error logs, status messages and Scrollable logging window.
 
+From final_app.py:
 ```
 # Enhanced app.py for QuCPL Studio with all requested features
 
