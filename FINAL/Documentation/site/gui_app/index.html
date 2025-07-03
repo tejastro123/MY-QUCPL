@@ -1,0 +1,1012 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for QuCPL, a programming language designed for quantum computing.">
+      
+      
+        <meta name="author" content="Tejas.M">
+      
+      
+        <link rel="canonical" href="https://tejastro123.github.io/qucpl/gui_app/">
+      
+      
+        <link rel="prev" href="../simulation/">
+      
+      
+        <link rel="next" href="../examples/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
+    
+    
+      
+        <title>GUI Application - QuCPL Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="deep-purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="QuCPL Documentation" class="md-header__button md-logo" aria-label="QuCPL Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            QuCPL Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              GUI Application
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/tejastro123/MY-QuCPL" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="QuCPL Documentation" class="md-nav__button md-logo" aria-label="QuCPL Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    QuCPL Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/tejastro123/MY-QuCPL" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../language/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Language Reference
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../programs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Writing QuCPL Programs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../grammar/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Grammar
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../parser/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Parser
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ast/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ast
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../compiler/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Compiler
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ir/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ir
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../visualize/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Visualization
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../simulation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Simulation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    GUI Application
+    
+  </span>
+  
+
+      </a>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Example Programs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../outputs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Outputs Explained
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../developer_note/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Developer Notes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+  <h1>GUI Application</h1>
+
+<p>Launched via: python final_app.py</p>
+<p>Features: Code editor, Run button, Tabs for Circuit(AST, IR, Simulation, Circuit, Bloch), Statevector, Histogram, Bloch, Export buttons, Error logs, status messages and Scrollable logging window.</p>
+<p>From final_app.py:</p>
+<pre><code># Enhanced app.py for QuCPL Studio with all requested features
+
+import tkinter as tk
+from tkinter import filedialog, messagebox, scrolledtext, ttk
+import os, json, re
+from parser import parse_qucpl
+from compiler import ast_to_ir
+from simulation import simulate, build_qiskit_circuit
+from visualize import visualize_circuit
+from qiskit.quantum_info import Statevector, partial_trace
+from qiskit.visualization import plot_histogram, plot_bloch_multivector
+from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
+import matplotlib.pyplot as plt
+import keyword
+
+try:
+    from qiskit_aer import AerSimulator
+    from qiskit.visualization.timeline import draw as timeline_drawer
+    from qiskit import transpile
+except ImportError:
+    AerSimulator = None
+    timeline_drawer = None
+
+QUCPL_KEYWORDS = [&quot;h&quot;, &quot;x&quot;, &quot;cx&quot;, &quot;ccx&quot;, &quot;measure&quot;, &quot;reset&quot;, &quot;barrier&quot;, &quot;if&quot;, &quot;for&quot;, &quot;module&quot;, &quot;return&quot;, &quot;let&quot;]
+QUCPL_SNIPPETS = {
+    &quot;if&quot;: &quot;if condition {\n    // code\n}&quot;,
+    &quot;for&quot;: &quot;for i in 0..N {\n    // code\n}&quot;,
+    &quot;module&quot;: &quot;module name(args) {\n    // body\n}&quot;
+}
+
+class QuCPLStudio:
+    def __init__(self, root):
+        self.root = root
+        self.root.title(&quot;QuCPL Studio – Quantum IDE&quot;)
+        self.root.geometry(&quot;1400x900&quot;)
+        self.save_dir = os.getcwd()
+        self.ast = None
+        self.ir = None
+        self.code = &quot;&quot;
+        self.ast_path = &quot;ast.json&quot;
+        self.ir_path = &quot;ir.json&quot;
+        self.create_widgets()
+
+    def create_widgets(self):
+        self.code_area = scrolledtext.ScrolledText(self.root, font=(&quot;Consolas&quot;, 12), wrap=tk.WORD, height=14, undo=True)
+        self.code_area.pack(fill=tk.BOTH, expand=True)
+        self.code_area.bind(&quot;&lt;Tab&gt;&quot;, self.on_tab_autocomplete)
+        self.code_area.bind(&quot;&lt;KeyRelease&gt;&quot;, self.highlight_keywords)
+
+        btn_frame = tk.Frame(self.root)
+        btn_frame.pack(fill=tk.X)
+        for text, cmd in [
+            (&quot;Open&quot;, self.load_code),
+            (&quot;Save&quot;, self.save_code),
+            (&quot;Set Output Dir&quot;, self.set_save_dir),
+            (&quot;Parse&quot;, self.parse_code),
+            (&quot;Compile&quot;, self.compile_ir),
+            (&quot;Visualize&quot;, self.plot_visualization),
+            (&quot;Simulate&quot;, self.simulate_and_display),
+            (&quot;Statevector&quot;, self.show_statevector),
+            (&quot;Reset&quot;, self.reset_app),
+            (&quot;Export AST/IR&quot;, self.export_ast_ir)
+        ]:
+            tk.Button(btn_frame, text=text, command=cmd).pack(side=tk.LEFT, padx=4, pady=4)
+
+        # Main vertical split: Tabs + Logging Console
+        main_pane = tk.PanedWindow(self.root, orient=tk.VERTICAL)
+        main_pane.pack(fill=tk.BOTH, expand=True)
+
+        # Tabs section
+        paned = tk.PanedWindow(main_pane, orient=tk.VERTICAL)
+        self.tabs = ttk.Notebook(paned)
+        self.ast_view = scrolledtext.ScrolledText(self.tabs, font=(&quot;Courier&quot;, 11))
+        self.ir_view = scrolledtext.ScrolledText(self.tabs, font=(&quot;Courier&quot;, 11))
+        self.plot_frame = tk.Frame(self.tabs)
+        self.sim_frame = tk.Frame(self.tabs)
+        self.state_frame = tk.Frame(self.tabs)
+        self.bloch_frame = tk.Frame(self.tabs)
+        self.help_view = scrolledtext.ScrolledText(self.tabs, font=(&quot;Consolas&quot;, 11))
+
+        for frame, label in [
+            (self.ast_view, &quot;AST&quot;),
+            (self.ir_view, &quot;IR&quot;),
+            (self.plot_frame, &quot;Visuals&quot;),
+            (self.sim_frame, &quot;Simulation Output&quot;),
+            (self.state_frame, &quot;Statevector&quot;),
+            (self.bloch_frame, &quot;Bloch Spheres&quot;),
+            (self.help_view, &quot;Help&quot;)
+        ]:
+            self.tabs.add(frame, text=label)
+        paned.add(self.tabs)
+
+        # Logging Console (Resizable)
+        self.log_area = scrolledtext.ScrolledText(main_pane, height=6, bg=&quot;#111&quot;, fg=&quot;lime&quot;, font=(&quot;Courier&quot;, 10))
+
+        main_pane.add(paned)
+        main_pane.add(self.log_area)
+
+        # Tutorial and View Controls
+        ctrl_frame = tk.Frame(self.root)
+        ctrl_frame.pack(fill=tk.X)
+        tk.Label(ctrl_frame, text=&quot;Tutorial:&quot;).pack(side=tk.LEFT)
+        self.tutorial_option = tk.StringVar(value=&quot;None&quot;)
+        tutorials = [&quot;None&quot;, &quot;Bell&quot;, &quot;GHZ&quot;, &quot;Teleport&quot;]
+        tk.OptionMenu(ctrl_frame, self.tutorial_option, *tutorials, command=self.load_tutorial).pack(side=tk.LEFT)
+
+        tk.Label(ctrl_frame, text=&quot;View:&quot;).pack(side=tk.LEFT)
+        self.view_option = tk.StringVar(value=&quot;Circuit&quot;)
+        views = [&quot;Circuit&quot;, &quot;Histogram&quot;, &quot;Bloch&quot;, &quot;Timeline&quot;, &quot;Density&quot;, &quot;Entanglement&quot;]
+        tk.OptionMenu(ctrl_frame, self.view_option, *views).pack(side=tk.LEFT)
+
+        self.load_help_doc()
+
+    def log(self, msg):
+        print(msg)
+        self.log_area.insert(tk.END, msg + &quot;\n&quot;)
+        self.log_area.see(tk.END)
+
+    def load_help_doc(self):
+        self.help_view.delete(&quot;1.0&quot;, tk.END)
+        self.help_view.insert(tk.END, &quot;&quot;&quot;
+Welcome to QuCPL Studio!
+=========================
+
+Steps:
+1. Write code or load a tutorial.
+2. Click Parse to generate AST.
+3. Click Compile to convert to IR.
+4. Click Visualize or Simulate to view.
+5. Use dropdowns for tutorials or views.
+
+Keywords:
+  - let, if, for, module, return
+Gates:
+  - h, x, cx, ccx, reset, barrier
+Measurement:
+  - measure q0 -&gt; c0
+
+Views:
+  - Circuit: Standard diagram
+  - Histogram: Output probabilities
+  - Bloch: Visualize qubit states
+  - Timeline: Gate scheduling
+  - Density: Matrix visualization
+  - Entanglement: Inter-qubit entanglement heatmap
+
+Tutorials:
+  Bell, GHZ, Quantum Teleportation
+&quot;&quot;&quot;)
+
+    def load_tutorial(self, value):
+        samples = {
+            &quot;Bell&quot;: &quot;let q0, q1, c0, c1\nh q0\ncx q0 q1\nmeasure q0 -&gt; c0\nmeasure q1 -&gt; c1&quot;,
+            &quot;GHZ&quot;: &quot;let q0, q1, q2, c0, c1, c2\nh q0\ncx q0 q1\ncx q1 q2\nmeasure q0 -&gt; c0\nmeasure q1 -&gt; c1\nmeasure q2 -&gt; c2&quot;,
+            &quot;Teleport&quot;: &quot;let q0, q1, q2, c0, c1\nh q1\ncx q1 q2\ncx q0 q1\nh q0\nmeasure q0 -&gt; c0\nmeasure q1 -&gt; c1\nif c0 == 1 { x q2 }\nif c1 == 1 { z q2 }&quot;
+        }
+        if value in samples:
+            self.code_area.delete(&quot;1.0&quot;, tk.END)
+            self.code_area.insert(tk.END, samples[value])
+            self.log(f&quot;[📚 TUTORIAL LOADED] {value} example&quot;)
+
+    def load_code(self):
+        path = filedialog.askopenfilename()
+        if path:
+            with open(path) as f:
+                self.code_area.delete(&quot;1.0&quot;, tk.END)
+                self.code_area.insert(tk.END, f.read())
+            self.log(f&quot;[OPENED] {path}&quot;)
+
+    def save_code(self):
+        path = filedialog.asksaveasfilename(defaultextension=&quot;.qucpl&quot;)
+        if path:
+            with open(path, &quot;w&quot;) as f:
+                f.write(self.code_area.get(&quot;1.0&quot;, tk.END))
+            self.log(f&quot;[SAVED] {path}&quot;)
+
+    def set_save_dir(self):
+        dir_ = filedialog.askdirectory()
+        if dir_:
+            self.save_dir = dir_
+            self.ast_path = os.path.join(dir_, &quot;ast.json&quot;)
+            self.ir_path = os.path.join(dir_, &quot;ir.json&quot;)
+            self.log(f&quot;[DIR SET] Output: {dir_}&quot;)
+
+    def parse_code(self):
+        try:
+            code = self.code_area.get(&quot;1.0&quot;, tk.END).strip()
+            self.ast = parse_qucpl(code)
+            with open(self.ast_path, &quot;w&quot;) as f:
+                json.dump(self.ast, f, indent=2)
+            self.ast_view.delete(&quot;1.0&quot;, tk.END)
+            self.ast_view.insert(tk.END, json.dumps(self.ast, indent=2))
+            self.log(&quot;[✅ PARSED] AST generated&quot;)
+        except Exception as e:
+            self.log(f&quot;[❌ PARSE ERROR] {e}&quot;)
+
+    def compile_ir(self):
+        try:
+            if not self.ast:
+                raise Exception(&quot;Parse first.&quot;)
+            self.ir = ast_to_ir(self.ast)
+            with open(self.ir_path, &quot;w&quot;) as f:
+                json.dump(self.ir, f, indent=2)
+            self.ir_view.delete(&quot;1.0&quot;, tk.END)
+            self.ir_view.insert(tk.END, json.dumps(self.ir, indent=2))
+            self.log(&quot;[✅ COMPILED] IR generated&quot;)
+        except Exception as e:
+            self.log(f&quot;[❌ COMPILE ERROR] {e}&quot;)
+
+    def export_ast_ir(self):
+        try:
+            if self.ast:
+                path = filedialog.asksaveasfilename(defaultextension=&quot;.json&quot;, initialfile=&quot;ast.json&quot;)
+                if path:
+                    with open(path, &quot;w&quot;) as f:
+                        json.dump(self.ast, f, indent=2)
+                    self.log(f&quot;[💾 AST SAVED] {path}&quot;)
+            if self.ir:
+                path = filedialog.asksaveasfilename(defaultextension=&quot;.json&quot;, initialfile=&quot;ir.json&quot;)
+                if path:
+                    with open(path, &quot;w&quot;) as f:
+                        json.dump(self.ir, f, indent=2)
+                    self.log(f&quot;[💾 IR SAVED] {path}&quot;)
+        except Exception as e:
+            self.log(f&quot;[❌ EXPORT ERROR] {e}&quot;)
+
+    def show_plot(self, fig, frame, save_name=&quot;circuit_output.png&quot;):
+        for w in frame.winfo_children():
+            w.destroy()
+        canvas = FigureCanvasTkAgg(fig, master=frame)
+        canvas.draw()
+        canvas.get_tk_widget().pack(fill=tk.BOTH, expand=True)
+
+        tk.Button(frame, text=&quot;Save Image&quot;, command=lambda: fig.savefig(save_name)).pack()
+
+
+    def show_sim_plot(self, fig, frame, save_name=&quot;simulation_histogram.png&quot;):
+        for w in frame.winfo_children():
+            w.destroy()
+        canvas = FigureCanvasTkAgg(fig, master=frame)
+        canvas.draw()
+        canvas.get_tk_widget().pack(fill=tk.BOTH, expand=True)
+
+        tk.Button(frame, text=&quot;Save Image&quot;, command=lambda: fig.savefig(save_name)).pack()
+
+    def simulate_and_display(self):
+        try:
+            if not self.ir:
+                raise Exception(&quot;Compile first.&quot;)
+            simulate(self.ir_path, title=&quot;Simulation&quot;)
+            qc, _ = build_qiskit_circuit(self.ir)
+            sim = AerSimulator()
+            tqc = transpile(qc, sim)
+            result = sim.run(tqc).result()
+            counts = result.get_counts()
+            fig = plot_histogram(counts)
+            self.show_sim_plot(fig, self.sim_frame)
+            self.log(&quot;[⚙️ SIMULATED] Histogram displayed&quot;)
+        except Exception as e:
+            self.log(f&quot;[❌ SIM ERROR] {e}&quot;)
+
+
+    def plot_visualization(self):
+        try:
+            if not self.ir:
+                raise Exception(&quot;Compile first.&quot;)
+            qc, _ = build_qiskit_circuit(self.ir)
+            view = self.view_option.get()
+            fig = None
+            if view == &quot;Circuit&quot;:
+                fig = qc.draw(output=&quot;mpl&quot;)
+            elif view == &quot;Histogram&quot; and AerSimulator:
+                sim = AerSimulator()
+                tqc = transpile(qc, sim)
+                result = sim.run(tqc).result()
+                counts = result.get_counts()
+                fig = plot_histogram(counts)
+            elif view == &quot;Bloch&quot;:
+                state = Statevector.from_instruction(qc)
+                fig = plot_bloch_multivector(state)
+            elif view == &quot;Timeline&quot; and timeline_drawer:
+                fig = timeline_drawer(qc)
+            elif view == &quot;Density&quot;:
+                from qiskit.quantum_info import DensityMatrix
+                dm = DensityMatrix.from_instruction(qc)
+                fig, ax = plt.subplots()
+                ax.matshow(abs(dm.data), cmap='viridis')
+                ax.set_title(&quot;Density Matrix&quot;)
+            elif view == &quot;Entanglement&quot;:
+                import numpy as np
+                state = Statevector.from_instruction(qc)
+                n = state.num_qubits
+                fig, ax = plt.subplots()
+                ent = np.zeros((n, n))
+                for i in range(n):
+                    for j in range(n):
+                        if i != j:
+                            reduced = partial_trace(state, [k for k in range(n) if k != i and k != j])
+                            ent[i, j] = np.linalg.norm(reduced.data.real)
+                ax.imshow(ent, cmap='inferno')
+                ax.set_title(&quot;Entanglement Heatmap&quot;)
+            if fig:
+                self.show_plot(fig, self.plot_frame)
+                self.log(f&quot;[🔍 VIEW] {view} shown&quot;)
+        except Exception as e:
+            self.log(f&quot;[❌ VIS ERROR] {e}&quot;)
+
+    def show_statevector(self):
+        try:
+            for w in self.state_frame.winfo_children():
+                w.destroy()
+            for w in self.bloch_frame.winfo_children():
+                w.destroy()
+            qc, _ = build_qiskit_circuit(self.ir)
+            state = Statevector.from_instruction(qc)
+
+            text = tk.Text(self.state_frame, font=(&quot;Courier&quot;, 12))
+            text.pack(fill=tk.BOTH, expand=True)
+            basis = [f&quot;|{i:0{state.num_qubits}b}&gt;&quot; for i in range(len(state))]
+            for i, amp in enumerate(state):
+                text.insert(tk.END, f&quot;{basis[i]}: {amp}\n&quot;)
+            tk.Button(self.state_frame, text=&quot;Save Text&quot;, command=lambda: self.save_text_output(text, &quot;statevector.txt&quot;)).pack()
+
+            fig = plot_bloch_multivector(state)
+            canvas = FigureCanvasTkAgg(fig, master=self.bloch_frame)
+            canvas.draw()
+            canvas.get_tk_widget().pack(fill=tk.BOTH, expand=True)
+            tk.Button(self.bloch_frame, text=&quot;Save Bloch Image&quot;, command=lambda: fig.savefig(&quot;bloch_sphere.png&quot;)).pack()
+
+            self.log(&quot;[📊 STATEVECTOR &amp; BLOCH] Displayed&quot;)
+        except Exception as e:
+            self.log(f&quot;[❌ STATE ERROR] {e}&quot;)
+
+    def save_text_output(self, widget, filename):
+        content = widget.get(&quot;1.0&quot;, tk.END)
+        path = filedialog.asksaveasfilename(defaultextension=&quot;.txt&quot;, initialfile=filename)
+        if path:
+            with open(path, &quot;w&quot;) as f:
+                f.write(content)
+            self.log(f&quot;[💾 TEXT SAVED] {path}&quot;)
+
+    def reset_app(self):
+        self.code_area.delete(&quot;1.0&quot;, tk.END)
+        self.ast_view.delete(&quot;1.0&quot;, tk.END)
+        self.ir_view.delete(&quot;1.0&quot;, tk.END)
+        self.log_area.delete(&quot;1.0&quot;, tk.END)
+        for f in [self.plot_frame, self.sim_frame, self.state_frame, self.bloch_frame]:
+            for w in f.winfo_children():
+                w.destroy()
+        self.log(&quot;[🔄 RESET] App state cleared&quot;)
+
+    def on_tab_autocomplete(self, event):
+        pos = self.code_area.index(tk.INSERT)
+        word = self.code_area.get(&quot;insert-1c wordstart&quot;, &quot;insert&quot;)
+        snippet = QUCPL_SNIPPETS.get(word.strip())
+        if snippet:
+            self.code_area.insert(&quot;insert&quot;, snippet[len(word):])
+            return &quot;break&quot;
+
+    def highlight_keywords(self, event=None):
+        self.code_area.tag_remove(&quot;keyword&quot;, &quot;1.0&quot;, tk.END)
+        for kw in QUCPL_KEYWORDS:
+            start = &quot;1.0&quot;
+            while True:
+                start = self.code_area.search(rf'\m{kw}\M', start, tk.END, regexp=True)
+                if not start:
+                    break
+                end = f&quot;{start}+{len(kw)}c&quot;
+                self.code_area.tag_add(&quot;keyword&quot;, start, end)
+                start = end
+        self.code_area.tag_config(&quot;keyword&quot;, foreground=&quot;blue&quot;, font=(&quot;Consolas&quot;, 12, &quot;bold&quot;))
+
+if __name__ == &quot;__main__&quot;:
+    root = tk.Tk()
+    app = QuCPLStudio(root)
+    root.mainloop()
+
+</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.56ea9cef.min.js"></script>
+      
+    
+  </body>
+</html>
