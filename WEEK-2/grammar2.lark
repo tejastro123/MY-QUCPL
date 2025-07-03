@@ -1,0 +1,21 @@
+?start: stmt+
+
+?stmt: qubit_decl ";"
+     | qop_stmt ";"
+     | measure_stmt ";"
+     | print_stmt ";"
+
+qubit_decl: "qubit" id_list
+qop_stmt: "qop" GATE_NAME id_list
+measure_stmt: "measure" id_list "->" id_list
+print_stmt: "print" id_list
+
+id_list: CNAME ("," CNAME)*
+
+GATE_NAME: "h" | "x" | "y" | "z" | "cx" | "cz"
+
+%import common.CNAME
+%import common.WS
+%ignore WS
+%ignore /\/\/.*/
+

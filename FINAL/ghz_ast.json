@@ -1,0 +1,79 @@
+{
+  "type": "Program",
+  "body": [
+    {
+      "type": "QubitDecl",
+      "qubits": [
+        [
+          "q0",
+          "q1",
+          "q2"
+        ]
+      ]
+    },
+    {
+      "type": "QuantumOp",
+      "gate": "h",
+      "qubits": [
+        "q0"
+      ]
+    },
+    {
+      "type": "QuantumOp",
+      "gate": "cx",
+      "qubits": [
+        "q0",
+        "q1"
+      ]
+    },
+    {
+      "type": "QuantumOp",
+      "gate": "cx",
+      "qubits": [
+        "q1",
+        "q2"
+      ]
+    },
+    {
+      "type": "Measure",
+      "qubits": [
+        [
+          "q0",
+          "q1",
+          "q2"
+        ]
+      ],
+      "classical": [
+        [
+          "c0",
+          "c1",
+          "c2"
+        ]
+      ]
+    },
+    {
+      "type": "If",
+      "condition": {
+        "type": "Condition",
+        "var": "c0",
+        "value": 1
+      },
+      "then": {
+        "type": "Print",
+        "args": [
+          [
+            "c0"
+          ]
+        ]
+      },
+      "else": {
+        "type": "Print",
+        "args": [
+          [
+            "c1"
+          ]
+        ]
+      }
+    }
+  ]
+}

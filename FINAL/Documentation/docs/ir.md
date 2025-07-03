@@ -1,0 +1,44 @@
+Bell circuit IR example :
+```
+{
+  "type": "Program",
+  "qubits": [
+    "q0",
+    "q1"
+  ],
+  "instructions": [
+    {
+      "op": "h",
+      "args": [
+        "q0"
+      ]
+    },
+    {
+      "op": "cx",
+      "args": [
+        "q0",
+        "q1"
+      ]
+    },
+    {
+      "op": "measure",
+      "qubits": [
+        "q0",
+        "q1"
+      ],
+      "classical": [
+        "c0",
+        "c1"
+      ]
+    },
+    {
+      "op": "print",
+      "args": [
+        "c0",
+        "c1"
+      ]
+    }
+  ],
+  "control_flow": []
+}
+```

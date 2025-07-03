@@ -1,0 +1,27 @@
+
+site_name: QuCPL Documentation
+site_url: https://tejastro123.github.io/qucpl
+repo_url: https://github.com/tejastro123/
+theme:
+  name: material
+  palette:
+    primary: indigo
+    accent: deep purple
+  font:
+    text: Roboto
+    code: Roboto Mono
+nav:
+  - Home: index.md
+  - Language Reference: language.md
+  - Writing QuCPL Programs: programs.md
+  - Grammar: grammar.md
+  - Parser: parser.md
+  - Ast: ast.md
+  - Compiler: compiler.md
+  - Ir: ir.md
+  - Visualization: visualize.md
+  - Simulation : simulation.md
+  - GUI Application: gui_app.md
+  - Example Programs: examples.md
+  - Outputs Explained: outputs.md
+  - Developer Notes: developer_note.md

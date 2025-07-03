@@ -1,0 +1,19 @@
+qubit q0, q1, q2;
+
+qop h q1;
+qop cx q1, q2;
+
+qop cx q0, q1;
+qop h q0;
+
+measure q0, q1 -> c0, c1;
+
+if (c1 == 1) {
+  qop x q2;
+}
+if (c0 == 1) {
+  qop z q2;
+}
+
+print q2;
+
