@@ -121,7 +121,7 @@ def draw_circuit(ir, save_path=None):
     plt.show()
 
 if __name__ == "__main__":
-    with open("single_ir.json") as f:
+    with open("teleportation_ir.json") as f:
         ir = json.load(f)
 
-    draw_circuit(ir, save_path="single_circuit.png")
+    draw_circuit(ir, save_path="teleportation_circuit.png")

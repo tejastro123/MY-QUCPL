@@ -239,7 +239,7 @@ def simulate(ir, save_hist="histogram.png", log_file="runtime_log.txt"):
 
 # Run on bell_ir.json if executed directly
 if __name__ == "__main__":
-    with open("single_ir.json") as f:
+    with open("teleportation_ir.json") as f:
         ir = json.load(f)
     simulate(ir)
 

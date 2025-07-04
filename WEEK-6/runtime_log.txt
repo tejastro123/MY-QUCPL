@@ -1,9 +1,17 @@
-Initialized state |0>
+Initialized state |000>
+Applied H to q1
+Applied CX to q1 → q2
+Applied CX to q0 → q1
 Applied H to q0
-Applied Z to q0
-Scheduled measurement on ['q0']
+Scheduled measurement on ['q0', 'q1']
 Final Statevector:
-|0> : 0.7071 + 0.0000j
-|1> : -0.7071 + 0.0000j
+|000> : 0.5000 + 0.0000j
+|001> : 0.0000 + 0.0000j
+|010> : 0.0000 + 0.0000j
+|011> : 0.5000 + 0.0000j
+|100> : 0.5000 + 0.0000j
+|101> : 0.0000 + 0.0000j
+|110> : 0.0000 + 0.0000j
+|111> : 0.5000 + 0.0000j
 Performed 1024-shot measurement.
 Histogram saved to histogram.png
