@@ -1,0 +1,153 @@
+{
+  "type": "Program",
+  "body": [
+    {
+      "type": "QubitDecl",
+      "qubits": [
+        [
+          "q0",
+          "q1",
+          "q2"
+        ]
+      ]
+    },
+    {
+      "type": "Barrier",
+      "qubits": [
+        "q0",
+        "q1",
+        "q2"
+      ]
+    },
+    {
+      "type": "QuantumOp",
+      "gate": "h",
+      "qubits": [
+        "q1"
+      ]
+    },
+    {
+      "type": "QuantumOp",
+      "gate": "cx",
+      "qubits": [
+        "q1",
+        "q2"
+      ]
+    },
+    {
+      "type": "Barrier",
+      "qubits": [
+        "q0",
+        "q1",
+        "q2"
+      ]
+    },
+    {
+      "type": "QuantumOp",
+      "gate": "cx",
+      "qubits": [
+        "q0",
+        "q1"
+      ]
+    },
+    {
+      "type": "QuantumOp",
+      "gate": "h",
+      "qubits": [
+        "q0"
+      ]
+    },
+    {
+      "type": "Barrier",
+      "qubits": [
+        "q0",
+        "q1",
+        "q2"
+      ]
+    },
+    {
+      "type": "Measure",
+      "qubits": [
+        [
+          "q0",
+          "q1"
+        ]
+      ],
+      "classical": [
+        [
+          "c0",
+          "c1"
+        ]
+      ]
+    },
+    {
+      "type": "Barrier",
+      "qubits": [
+        "q0",
+        "q1",
+        "q2"
+      ]
+    },
+    {
+      "type": "If",
+      "condition": {
+        "type": "Condition",
+        "var": "c1",
+        "value": 1
+      },
+      "then": {
+        "type": "QuantumOp",
+        "gate": "x",
+        "qubits": [
+          "q2"
+        ]
+      },
+      "else": null
+    },
+    {
+      "type": "If",
+      "condition": {
+        "type": "Condition",
+        "var": "c0",
+        "value": 1
+      },
+      "then": {
+        "type": "QuantumOp",
+        "gate": "z",
+        "qubits": [
+          "q2"
+        ]
+      },
+      "else": null
+    },
+    {
+      "type": "Barrier",
+      "qubits": [
+        "q0",
+        "q1",
+        "q2"
+      ]
+    },
+    {
+      "type": "Measure",
+      "qubits": [
+        [
+          "q2"
+        ]
+      ],
+      "classical": [
+        [
+          "c2"
+        ]
+      ]
+    },
+    {
+      "type": "Print",
+      "args": [
+        [
+          "q2"
+        ]
+      ]
+    }
+  ]
+}

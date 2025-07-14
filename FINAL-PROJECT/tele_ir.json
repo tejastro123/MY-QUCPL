@@ -1,0 +1,30 @@
+{
+  "type": "Program",
+  "qubits": ["q0", "q1", "q2"],
+  "instructions": [
+    {"op": "barrier", "args": ["q0", "q1", "q2"]},
+    {"op": "h", "args": ["q1"]},
+    {"op": "cx", "args": ["q1", "q2"]},
+    {"op": "barrier", "args": ["q0", "q1", "q2"]},
+    {"op": "cx", "args": ["q0", "q1"]},
+    {"op": "h", "args": ["q0"]},
+    {"op": "barrier", "args": ["q0", "q1", "q2"]},
+    {"op": "measure", 
+    "qubits": ["q0", "q1"], 
+    "classical": ["c0", "c1"]},
+    {"op": "barrier", "args": ["q0", "q1", "q2"]},
+    {"type": "if", 
+    "condition": {"type": "Condition", "var": "c1", "value": 1}, 
+    "then": [{"op": "x", "args": ["q2"]}], "else": []
+    },
+    {"type": "if", 
+    "condition": {"type": "Condition", "var": "c0", "value": 1}, 
+    "then": [{"op": "z", "args": ["q2"]}], "else": []
+    },
+    {"op": "barrier", "args": ["q0", "q1", "q2"]},
+    {"op": "measure", "qubits": ["q2"], "classical": ["c2"]},
+    {"op": "print", "args": ["q2"]}
+  ]
+}
+
+
