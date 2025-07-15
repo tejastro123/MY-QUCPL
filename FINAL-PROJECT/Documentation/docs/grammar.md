@@ -1,0 +1,39 @@
+# Grammar 
+
+QuCPL uses Lark (PEG) to define its grammar.
+
+PEG-style rule definitions
+
+Supports declarations, gates, and measurement
+
+Useful for contributors extending the syntax
+
+Directly from grammar.lark:
+```
+?start: stmt+
+
+?stmt: qubit_decl ";"
+     | qop_stmt ";"
+     | measure_stmt ";"
+     | print_stmt ";"
+     | if_stmt
+
+qubit_decl: "qubit" id_list
+qop_stmt: "qop" GATE_NAME id_list
+measure_stmt: "measure" id_list "->" id_list
+print_stmt: "print" id_list
+
+if_stmt: "if" "(" condition ")" "{" stmt+ "}" ("else" "{" stmt+ "}")?
+
+condition: CNAME "==" INT
+
+id_list: CNAME ("," CNAME)*
+
+GATE_NAME: "h" | "x" | "y" | "z" | "cx" | "cz" | "ccx" | "swap" | "cy"
+
+%import common.CNAME
+%import common.INT
+%import common.WS
+%ignore WS
+
+```
