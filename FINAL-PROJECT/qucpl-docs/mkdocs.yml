@@ -1,0 +1,31 @@
+site_name: QUCPL Documentation
+site_description: Documentation for the Quantum Computing Programming Language (QUCPL)
+site_author: Mellimpudi Tejas
+repo_url: https://github.com/tejastro123/MY-QUCPL
+extra:
+  author:
+    name: Mellimpudi Tejas
+    email: f20230802@hyderabad.bits-pilani.ac.in
+    institution: BITS Pilani, Hyderabad Campus 
+    id: 2023B5A70802H
+    discipline: MSc Physics, BE CSE (Dual)
+nav:
+  - Home: index.md
+  - Introduction: introduction.md
+  - Quantum Foundations: quantum_foundations.md
+  - Entanglement & Teleportation: entanglement_tele.md
+  - Language Design: language_design.md
+  - Grammar : grammar.md
+  - Parser : parser.md
+  - AST : ast_output.md
+  - IR Schema : ir_schema.md
+  - Compiler : compiler.md
+  - IR : ir_output.md
+  - Visualization : visualize.md
+  - Simulation : simulator.md
+  - Teleportation : teleportation.md
+  - Conclusions: conclusions.md
+  - References: references.md
+  - Glossary: glossary.md
+theme:
+  name: material
