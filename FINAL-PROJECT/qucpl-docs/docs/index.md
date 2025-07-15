@@ -12,7 +12,7 @@ Discipline: MSc Physics, BE CSE (Dual)
 
 Institution: BITS Pilani, Hyderabad Campus
 
-Email: <tejas.mellimpudi@gmail.com>
+Email: <f20230802@hyderabad.bits-pilani.ac.in>
 
 ## Project Overview
 
