@@ -6,16 +6,14 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Documentation for QuCPL, a programming language designed for quantum computing.">
+        <meta name="description" content="Documentation for the Quantum Computing Programming Language (QUCPL)">
       
       
-        <meta name="author" content="Tejas.M">
+        <meta name="author" content="Mellimpudi Tejas">
       
       
-        <link rel="canonical" href="https://tejastro123.github.io/qucpl/grammar/">
       
-      
-        <link rel="prev" href="../programs/">
+        <link rel="prev" href="../language_design/">
       
       
         <link rel="next" href="../parser/">
@@ -26,14 +24,11 @@
     
     
       
-        <title>Grammar - QuCPL Documentation</title>
+        <title>Grammar - QUCPL Documentation</title>
       
     
     
       <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
-      
-        
-        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -62,12 +57,7 @@
   </head>
   
   
-    
-    
-    
-    
-    
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="deep-purple">
+    <body dir="ltr">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -76,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#grammar" class="md-skip">
+        <a href="#grammar-specification-using-lark-peg" class="md-skip">
           Skip to content
         </a>
       
@@ -92,7 +82,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="QuCPL Documentation" class="md-header__button md-logo" aria-label="QuCPL Documentation" data-md-component="logo">
+    <a href=".." title="QUCPL Documentation" class="md-header__button md-logo" aria-label="QUCPL Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -106,7 +96,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            QuCPL Documentation
+            QUCPL Documentation
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -119,8 +109,8 @@
       </div>
     </div>
     
-      
     
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
     
@@ -166,7 +156,7 @@
     
     
       <div class="md-header__source">
-        <a href="https://github.com/tejastro123/MY-QuCPL" title="Go to repository" class="md-source" data-md-component="source">
+        <a href="https://github.com/tejastro123/MY-QUCPL" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
@@ -202,17 +192,17 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="QuCPL Documentation" class="md-nav__button md-logo" aria-label="QuCPL Documentation" data-md-component="logo">
+    <a href=".." title="QUCPL Documentation" class="md-nav__button md-logo" aria-label="QUCPL Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    QuCPL Documentation
+    QUCPL Documentation
   </label>
   
     <div class="md-nav__source">
-      <a href="https://github.com/tejastro123/MY-QuCPL" title="Go to repository" class="md-source" data-md-component="source">
+      <a href="https://github.com/tejastro123/MY-QUCPL" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
@@ -254,12 +244,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../language/" class="md-nav__link">
+      <a href="../introduction/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Language Reference
+    Introduction
     
   </span>
   
@@ -276,12 +266,56 @@
   
   
     <li class="md-nav__item">
-      <a href="../programs/" class="md-nav__link">
+      <a href="../quantum_foundations/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Writing QuCPL Programs
+    Quantum Foundations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../entanglement_tele/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Entanglement & Teleportation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../language_design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Language Design
     
   </span>
   
@@ -307,6 +341,19 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Grammar
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -318,6 +365,43 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#key-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Features
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-grammar-uses-larks-conventions" class="md-nav__link">
+    <span class="md-ellipsis">
+      The grammar uses Lark’s conventions
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -352,12 +436,34 @@
   
   
     <li class="md-nav__item">
-      <a href="../ast/" class="md-nav__link">
+      <a href="../ast_output/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Ast
+    AST
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ir_schema/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    IR Schema
     
   </span>
   
@@ -396,12 +502,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../ir/" class="md-nav__link">
+      <a href="../ir_output/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Ir
+    IR
     
   </span>
   
@@ -440,7 +546,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../simulation/" class="md-nav__link">
+      <a href="../simulator/" class="md-nav__link">
         
   
   
@@ -462,12 +568,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../gui_app/" class="md-nav__link">
+      <a href="../teleportation/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    GUI Application
+    Teleportation
     
   </span>
   
@@ -484,12 +590,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../examples/" class="md-nav__link">
+      <a href="../conclusions/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Example Programs
+    Conclusions
     
   </span>
   
@@ -506,12 +612,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../outputs/" class="md-nav__link">
+      <a href="../references/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Outputs Explained
+    References
     
   </span>
   
@@ -528,12 +634,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../developer_note/" class="md-nav__link">
+      <a href="../glossary/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Developer Notes
+    Glossary
     
   </span>
   
@@ -563,6 +669,32 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#key-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Features
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-grammar-uses-larks-conventions" class="md-nav__link">
+    <span class="md-ellipsis">
+      The grammar uses Lark’s conventions
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -580,39 +712,20 @@
   
 
 
-<h1 id="grammar">Grammar</h1>
-<p>QuCPL uses Lark (PEG) to define its grammar.</p>
-<p>PEG-style rule definitions</p>
-<p>Supports declarations, gates, and measurement</p>
-<p>Useful for contributors extending the syntax</p>
-<p>Directly from grammar.lark:</p>
-<pre><code>?start: stmt+
-
-?stmt: qubit_decl &quot;;&quot;
-     | qop_stmt &quot;;&quot;
-     | measure_stmt &quot;;&quot;
-     | print_stmt &quot;;&quot;
-     | if_stmt
-
-qubit_decl: &quot;qubit&quot; id_list
-qop_stmt: &quot;qop&quot; GATE_NAME id_list
-measure_stmt: &quot;measure&quot; id_list &quot;-&gt;&quot; id_list
-print_stmt: &quot;print&quot; id_list
-
-if_stmt: &quot;if&quot; &quot;(&quot; condition &quot;)&quot; &quot;{&quot; stmt+ &quot;}&quot; (&quot;else&quot; &quot;{&quot; stmt+ &quot;}&quot;)?
-
-condition: CNAME &quot;==&quot; INT
-
-id_list: CNAME (&quot;,&quot; CNAME)*
-
-GATE_NAME: &quot;h&quot; | &quot;x&quot; | &quot;y&quot; | &quot;z&quot; | &quot;cx&quot; | &quot;cz&quot; | &quot;ccx&quot; | &quot;swap&quot; | &quot;cy&quot;
-
-%import common.CNAME
-%import common.INT
-%import common.WS
-%ignore WS
-
-</code></pre>
+<h1 id="grammar-specification-using-lark-peg">Grammar Specification using Lark (PEG)</h1>
+<p>The QUCPL grammar was defined using Lark's PEG syntax in a file named grammar.lark.</p>
+<p>This grammar specifies the rules for valid QUCPL programs, including qubit declarations, gate operations, measurements, and comments.</p>
+<p><img alt="alt text" src="../images/grammar.png" /></p>
+<h2 id="key-features">Key Features</h2>
+<p>Qubit Declarations: Syntax like qubit q0, q1; declares one or more qubits.</p>
+<p>Gate Operations: Supports single-qubit gates (h, x, y, z, rx, ry, rz) and multi-qubit gates (cx), e.g., h q0; or cx q0, q1;.</p>
+<p>Measurement: Syntax like measure q0 -&gt; c0; measures a qubit and stores the result in a classical bit.</p>
+<p>Comments: Lines starting with // are ignored, enhancing code readability.</p>
+<p>Extensibility: The grammar is designed to support future additions like control flow (if, loop) and custom gates.</p>
+<h2 id="the-grammar-uses-larks-conventions">The grammar uses Lark’s conventions</h2>
+<p>WS ignores whitespace for cleaner parsing.</p>
+<p>Comments are ignored during parsing but preserved for documentation.</p>
+<p>IDENTIFIER supports alphanumeric names for qubits and classical bits.</p>
 
 
 

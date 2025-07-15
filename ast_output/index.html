@@ -6,19 +6,17 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Documentation for QuCPL, a programming language designed for quantum computing.">
+        <meta name="description" content="Documentation for the Quantum Computing Programming Language (QUCPL)">
       
       
-        <meta name="author" content="Tejas.M">
+        <meta name="author" content="Mellimpudi Tejas">
       
       
-        <link rel="canonical" href="https://tejastro123.github.io/qucpl/programs/">
+      
+        <link rel="prev" href="../parser/">
       
       
-        <link rel="prev" href="../language/">
-      
-      
-        <link rel="next" href="../grammar/">
+        <link rel="next" href="../ir_schema/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -26,14 +24,11 @@
     
     
       
-        <title>Writing QuCPL Programs - QuCPL Documentation</title>
+        <title>AST - QUCPL Documentation</title>
       
     
     
       <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
-      
-        
-        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -62,18 +57,18 @@
   </head>
   
   
-    
-    
-    
-    
-    
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="deep-purple">
+    <body dir="ltr">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#abstract-syntax-tree-ast-output" class="md-skip">
+          Skip to content
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -87,7 +82,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="QuCPL Documentation" class="md-header__button md-logo" aria-label="QuCPL Documentation" data-md-component="logo">
+    <a href=".." title="QUCPL Documentation" class="md-header__button md-logo" aria-label="QUCPL Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -101,21 +96,21 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            QuCPL Documentation
+            QUCPL Documentation
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Writing QuCPL Programs
+              AST
             
           </span>
         </div>
       </div>
     </div>
     
-      
     
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
     
@@ -161,7 +156,7 @@
     
     
       <div class="md-header__source">
-        <a href="https://github.com/tejastro123/MY-QuCPL" title="Go to repository" class="md-source" data-md-component="source">
+        <a href="https://github.com/tejastro123/MY-QUCPL" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
@@ -197,17 +192,17 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="QuCPL Documentation" class="md-nav__button md-logo" aria-label="QuCPL Documentation" data-md-component="logo">
+    <a href=".." title="QUCPL Documentation" class="md-nav__button md-logo" aria-label="QUCPL Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    QuCPL Documentation
+    QUCPL Documentation
   </label>
   
     <div class="md-nav__source">
-      <a href="https://github.com/tejastro123/MY-QuCPL" title="Go to repository" class="md-source" data-md-component="source">
+      <a href="https://github.com/tejastro123/MY-QUCPL" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
@@ -249,12 +244,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../language/" class="md-nav__link">
+      <a href="../introduction/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Language Reference
+    Introduction
     
   </span>
   
@@ -268,28 +263,64 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../quantum_foundations/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Writing QuCPL Programs
+    Quantum Foundations
     
   </span>
   
 
       </a>
+    </li>
+  
+
+    
       
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../entanglement_tele/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Entanglement & Teleportation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../language_design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Language Design
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -342,15 +373,106 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../ast/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    AST
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
-    Ast
+    AST
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ast-generation-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      AST Generation Process
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-program-bell-state-in-qucpl" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Program: Bell State in QuCPL
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explanation-of-ast-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explanation of AST Structure
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ir_schema/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    IR Schema
     
   </span>
   
@@ -389,12 +511,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../ir/" class="md-nav__link">
+      <a href="../ir_output/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Ir
+    IR
     
   </span>
   
@@ -433,7 +555,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../simulation/" class="md-nav__link">
+      <a href="../simulator/" class="md-nav__link">
         
   
   
@@ -455,12 +577,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../gui_app/" class="md-nav__link">
+      <a href="../teleportation/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    GUI Application
+    Teleportation
     
   </span>
   
@@ -477,12 +599,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../examples/" class="md-nav__link">
+      <a href="../conclusions/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Example Programs
+    Conclusions
     
   </span>
   
@@ -499,12 +621,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../outputs/" class="md-nav__link">
+      <a href="../references/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Outputs Explained
+    References
     
   </span>
   
@@ -521,12 +643,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../developer_note/" class="md-nav__link">
+      <a href="../glossary/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Developer Notes
+    Glossary
     
   </span>
   
@@ -553,6 +675,43 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ast-generation-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      AST Generation Process
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-program-bell-state-in-qucpl" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Program: Bell State in QuCPL
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explanation-of-ast-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explanation of AST Structure
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -571,46 +730,30 @@
   
 
 
-  <h1>Writing QuCPL Programs</h1>
-
-<p>A valid QuCPL program contains:
-Qubit declarations,
-Gate operations,
-Measurement operations,</p>
-<p>Example: Bell State</p>
-<pre><code>qubit q0, q1;
-H q0;
-CX q0, q1;
-measure q0 -&gt; c0;
-measure q1 -&gt; c1;
-</code></pre>
-<p>Example: GHZ State</p>
-<pre><code>qubit q0, q1, q2;
-H q0;
-CX q0, q1;
-CX q0, q2;
-measure q0 -&gt; c0;
-measure q1 -&gt; c1;
-measure q2 -&gt; c2;
-</code></pre>
-<p>Example: Teleportation</p>
-<pre><code>qubit q0, q1, q2;
-qop h q1;
-qop cx q1, q2;
-qop cx q0, q1;
-qop h q0;
-measure q0, q1 -&gt; c0, c1;
-if (c1 == 1) {
-  qop x q2;
-}
-if (c0 == 1) {
-  qop z q2;
-}
-print q2;
-</code></pre>
-<p>bell.qucpl: Generates Bell pair</p>
-<p>ghz.qucpl: Tripartite GHZ entanglement</p>
-<p>teleportation.qucpl: Full quantum teleportation</p>
+<h1 id="abstract-syntax-tree-ast-output">Abstract Syntax Tree (AST) Output</h1>
+<p>The Abstract Syntax Tree (AST) is a hierarchical representation of the QUCPL program's structure, generated by parsing the source code using the Lark parser in Python. This section details the AST generation process and provides a sample AST output for the Bell state program, as implemented during Week 3 of the internship.</p>
+<h2 id="ast-generation-process">AST Generation Process</h2>
+<p>The AST is created using the following steps:</p>
+<p>Source Code Parsing: The QUCPL source code is parsed using a grammar defined in grammar.lark with the Lark parsing library.</p>
+<p>Tree Transformation: A Transformer class processes the parse tree to produce a simplified AST, which is structured for further compilation into an Intermediate Representation (IR).</p>
+<p>JSON Serialization: The AST is saved as a JSON file (ast.json) for compatibility with downstream tools like the compiler and simulator.</p>
+<h2 id="example-program-bell-state-in-qucpl">Example Program: Bell State in QuCPL</h2>
+<p>Declares two qubits (q0, q1) initialized in the ( |0\rangle ) state.</p>
+<p>Applies a Hadamard gate (h) to q0, creating a superposition.</p>
+<p>Applies a CNOT gate (cx) with q0 as control and q1 as target, entangling the qubits.</p>
+<p>Measures both qubits into classical bits c0 and c1.</p>
+<p>Expected Output:</p>
+<p>• Since the qubits are in a Bell state, the result will always be correlated.</p>
+<p>• Either 00 or 11, each with 50% probability.</p>
+<p>Sample AST Output (ast.json): The successful parsing and AST generation validates the correctness of both the language design and the parser implementation.</p>
+<p><img alt="alt text" src="../images/ast.png" /></p>
+<h2 id="explanation-of-ast-structure">Explanation of AST Structure</h2>
+<p>type: "program": The root node, encapsulating the entire program.</p>
+<p>body: A list of statements, each representing a QUCPL construct:</p>
+<p>qubit_decl: Declares qubits (q0, q1).</p>
+<p>gate: Specifies gate operations (h, cx) with their arguments.</p>
+<p>measure: Maps qubit measurements to classical bits.</p>
+<p>This AST validates the correctness of the parser and serves as input for the IR generation phase.</p>
 
 
 

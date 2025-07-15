@@ -6,19 +6,17 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Documentation for QuCPL, a programming language designed for quantum computing.">
+        <meta name="description" content="Documentation for the Quantum Computing Programming Language (QUCPL)">
       
       
-        <meta name="author" content="Tejas.M">
+        <meta name="author" content="Mellimpudi Tejas">
       
       
-        <link rel="canonical" href="https://tejastro123.github.io/qucpl/language/">
+      
+        <link rel="prev" href="../conclusions/">
       
       
-        <link rel="prev" href="..">
-      
-      
-        <link rel="next" href="../programs/">
+        <link rel="next" href="../glossary/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -26,14 +24,11 @@
     
     
       
-        <title>Language Reference - QuCPL Documentation</title>
+        <title>References - QUCPL Documentation</title>
       
     
     
       <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
-      
-        
-        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -62,18 +57,18 @@
   </head>
   
   
-    
-    
-    
-    
-    
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="deep-purple">
+    <body dir="ltr">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#references" class="md-skip">
+          Skip to content
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -87,7 +82,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="QuCPL Documentation" class="md-header__button md-logo" aria-label="QuCPL Documentation" data-md-component="logo">
+    <a href=".." title="QUCPL Documentation" class="md-header__button md-logo" aria-label="QUCPL Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -101,21 +96,21 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            QuCPL Documentation
+            QUCPL Documentation
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Language Reference
+              References
             
           </span>
         </div>
       </div>
     </div>
     
-      
     
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
     
@@ -161,7 +156,7 @@
     
     
       <div class="md-header__source">
-        <a href="https://github.com/tejastro123/MY-QuCPL" title="Go to repository" class="md-source" data-md-component="source">
+        <a href="https://github.com/tejastro123/MY-QUCPL" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
@@ -197,17 +192,17 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="QuCPL Documentation" class="md-nav__button md-logo" aria-label="QuCPL Documentation" data-md-component="logo">
+    <a href=".." title="QUCPL Documentation" class="md-nav__button md-logo" aria-label="QUCPL Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    QuCPL Documentation
+    QUCPL Documentation
   </label>
   
     <div class="md-nav__source">
-      <a href="https://github.com/tejastro123/MY-QuCPL" title="Go to repository" class="md-source" data-md-component="source">
+      <a href="https://github.com/tejastro123/MY-QUCPL" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
@@ -246,28 +241,20 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../introduction/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Language Reference
+    Introduction
     
   </span>
   
 
       </a>
-      
     </li>
   
 
@@ -279,12 +266,56 @@
   
   
     <li class="md-nav__item">
-      <a href="../programs/" class="md-nav__link">
+      <a href="../quantum_foundations/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Writing QuCPL Programs
+    Quantum Foundations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../entanglement_tele/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Entanglement & Teleportation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../language_design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Language Design
     
   </span>
   
@@ -345,12 +376,34 @@
   
   
     <li class="md-nav__item">
-      <a href="../ast/" class="md-nav__link">
+      <a href="../ast_output/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Ast
+    AST
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ir_schema/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    IR Schema
     
   </span>
   
@@ -389,12 +442,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../ir/" class="md-nav__link">
+      <a href="../ir_output/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Ir
+    IR
     
   </span>
   
@@ -433,7 +486,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../simulation/" class="md-nav__link">
+      <a href="../simulator/" class="md-nav__link">
         
   
   
@@ -455,12 +508,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../gui_app/" class="md-nav__link">
+      <a href="../teleportation/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    GUI Application
+    Teleportation
     
   </span>
   
@@ -477,12 +530,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../examples/" class="md-nav__link">
+      <a href="../conclusions/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Example Programs
+    Conclusions
     
   </span>
   
@@ -496,20 +549,30 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../outputs/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
-    Outputs Explained
+    References
     
   </span>
   
 
       </a>
+      
     </li>
   
 
@@ -521,12 +584,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../developer_note/" class="md-nav__link">
+      <a href="../glossary/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Developer Notes
+    Glossary
     
   </span>
   
@@ -553,6 +616,8 @@
   
   
   
+    
+  
   
 </nav>
                   </div>
@@ -571,25 +636,25 @@
   
 
 
-  <h1>Language Reference</h1>
-
-<p>Keywords:
-qubit, measure, H, X, Y, Z, CX, CCX, reset</p>
-<p>Includes:</p>
-<p>List of supported gate operations</p>
-<p>Basic QuCPL syntax with examples</p>
-<p>Comment style</p>
-<p>Clean, simple syntax like:</p>
-<pre><code>qubit q0, q1;
-H q0;
-CX q0, q1;
-measure q0 -&gt; c0;
-measure q1 -&gt; c1;
-</code></pre>
-<p>Comments:
-Use // for single-line comments.</p>
-<p>Classical Registers:
-Declare as needed: classical c0, c1;</p>
+<h1 id="references">References</h1>
+<p>[1] IBM Quantum, IBM Quantum Documentation. [Online]. Available: <a href="https://docs.quantum.ibm.com/">https://docs.quantum.ibm.com/</a>.
+(Used for understanding quantum gates, circuits, backend integration, and simulation workflows with Qiskit.)</p>
+<p>[2] Qiskit Contributors, Qiskit: An Open-source Framework for Quantum Computing, 2024. [Online]. Available: <a href="https://qiskit.org">https://qiskit.org</a>.
+(Official library used for constructing and executing Bell, GHZ, and teleportation circuits.)</p>
+<p>[3] Lark Developers, Lark: A Modern Parsing Library for Python. [Online]. Available: <a href="https://lark-parser.readthedocs.io/en/latest/">https://lark-parser.readthedocs.io/en/latest/</a>.
+(Used in Weeks 2–3 for grammar definition, parsing, and AST generation in QuCPL.)</p>
+<p>[4] Python Software Foundation, Python 3.11 Documentation. [Online]. Available: <a href="https://docs.python.org/3/">https://docs.python.org/3/</a>.
+(Referenced throughout the project for JSON handling, modular code design, file operations, and error handling.)</p>
+<p>[5] QuEDX, Quantum Computing Interactive Simulator and Learning Platform. [Online]. Available: <a href="https://quedx.com/">https://quedx.com/</a>.
+(Used in Weeks 1–2 for intuitive visualization of quantum operations and circuits.)</p>
+<p>[6] Wikipedia Contributors, “Qubit”, Wikipedia: The Free Encyclopedia. [Online]. Available: <a href="https://en.wikipedia.org/wiki/Qubit">https://en.wikipedia.org/wiki/Qubit</a>.
+(Consulted during technical report writing for definitions and diagrams on quantum states.)</p>
+<p>[7] MkDocs Team, MkDocs – Project Documentation Generator. [Online]. Available: <a href="https://www.mkdocs.org/">https://www.mkdocs.org/</a>.
+(Used in Week 7 to build the QuCPL documentation site.)</p>
+<p>[8] OBS Studio Contributors, OBS Studio: Open Source Screen Recorder. [Online]. Available: <a href="https://obsproject.com/">https://obsproject.com/</a>.
+(Used for creating video tutorials and walkthroughs.)</p>
+<p>[9] Loom, Inc., Loom – Video Messaging for Work. [Online]. Available: <a href="https://www.loom.com/">https://www.loom.com/</a>.
+(Used alongside OBS to record short tutorials and visual explanations of QuCPL features.)</p>
 
 
 

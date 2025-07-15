@@ -13,10 +13,10 @@
       
       
       
-        <link rel="prev" href="../ir_output/">
+        <link rel="prev" href="../simulator/">
       
       
-        <link rel="next" href="../simulator/">
+        <link rel="next" href="../conclusions/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -24,7 +24,7 @@
     
     
       
-        <title>Visualization - QUCPL Documentation</title>
+        <title>Teleportation - QUCPL Documentation</title>
       
     
     
@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#circuit-visualization-in-qucpl" class="md-skip">
+        <a href="#teleportation-protocol-in-qucpl" class="md-skip">
           Skip to content
         </a>
       
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Visualization
+              Teleportation
             
           </span>
         </div>
@@ -461,6 +461,50 @@
       
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../visualize/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Visualization
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../simulator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Simulation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
     
   
   
@@ -478,7 +522,7 @@
   
   
   <span class="md-ellipsis">
-    Visualization
+    Teleportation
     
   </span>
   
@@ -491,7 +535,7 @@
   
   
   <span class="md-ellipsis">
-    Visualization
+    Teleportation
     
   </span>
   
@@ -523,36 +567,63 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#visualization-pipeline" class="md-nav__link">
+  <a href="#theoretical-background" class="md-nav__link">
     <span class="md-ellipsis">
-      Visualization Pipeline
+      Theoretical Background
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#implementation-details" class="md-nav__link">
+  <a href="#implementation-in-qucpl" class="md-nav__link">
     <span class="md-ellipsis">
-      Implementation Details
+      Implementation in QUCPL
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#example-visualizing-the-bell-state-circuit" class="md-nav__link">
+  <a href="#ast-and-ir-generation" class="md-nav__link">
     <span class="md-ellipsis">
-      Example: Visualizing the Bell State Circuit
+      AST and IR Generation
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-current-visualization-tool-is-functional-but-can-be-improved" class="md-nav__link">
+  <a href="#visualization" class="md-nav__link">
     <span class="md-ellipsis">
-      The current visualization tool is functional but can be improved
+      Visualization
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#simulation-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      Simulation Results
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#runtime-error-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Runtime error handling
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusions
     </span>
   </a>
   
@@ -562,50 +633,6 @@
   
 </nav>
       
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../simulator/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Simulation
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../teleportation/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Teleportation
-    
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -712,36 +739,63 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#visualization-pipeline" class="md-nav__link">
+  <a href="#theoretical-background" class="md-nav__link">
     <span class="md-ellipsis">
-      Visualization Pipeline
+      Theoretical Background
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#implementation-details" class="md-nav__link">
+  <a href="#implementation-in-qucpl" class="md-nav__link">
     <span class="md-ellipsis">
-      Implementation Details
+      Implementation in QUCPL
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#example-visualizing-the-bell-state-circuit" class="md-nav__link">
+  <a href="#ast-and-ir-generation" class="md-nav__link">
     <span class="md-ellipsis">
-      Example: Visualizing the Bell State Circuit
+      AST and IR Generation
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-current-visualization-tool-is-functional-but-can-be-improved" class="md-nav__link">
+  <a href="#visualization" class="md-nav__link">
     <span class="md-ellipsis">
-      The current visualization tool is functional but can be improved
+      Visualization
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#simulation-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      Simulation Results
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#runtime-error-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Runtime error handling
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusions
     </span>
   </a>
   
@@ -766,48 +820,100 @@
   
 
 
-<h1 id="circuit-visualization-in-qucpl">Circuit Visualization in QUCPL</h1>
-<p>Circuit visualization is a critical component of the QUCPL (Quantum Computing Programming Language) project, enabling users to inspect and debug quantum programs by rendering their circuit representations. The visualization tool transforms the Intermediate Representation (IR) of a QUCPL program into a visual quantum circuit diagram using Qiskit and Matplotlib, making the program’s logic tangible and intuitive.</p>
+<h1 id="teleportation-protocol-in-qucpl">Teleportation Protocol in QUCPL</h1>
 <h2 id="overview">Overview</h2>
-<p>The visualization module, implemented in the visualize.py script, bridges the gap between the abstract code written in QUCPL and the concrete quantum circuits executed on backends like Qiskit’s Aer simulator.</p>
-<p>The primary goals of the visualization pipeline are:</p>
-<p>Render Quantum Circuits: Generate clear, accurate circuit diagrams from the IR.</p>
-<p>Support Debugging: Help developers verify the correctness of their programs by visualizing gate operations, measurements, and qubit interactions.</p>
-<p>Enhance Usability: Provide a visual feedback loop that makes QUCPL accessible to both beginners and advanced users.</p>
-<p>The visualization process is integrated into the QUCPL toolchain, taking the JSON-based IR (e.g., bell_ir.json) generated by the compiler and producing a circuit diagram that matches the intended quantum logic.</p>
-<h2 id="visualization-pipeline">Visualization Pipeline</h2>
-<p>The visualization pipeline involves the following steps:</p>
-<p>Load the IR: The visualize.py script reads the JSON-based IR file, which contains the program’s structure, including qubit declarations, gate operations, measurements, and control flow.</p>
-<p>Map Qubits and Classical Bits: The script maps qubit and classical register names from the IR to Qiskit’s indexing system, ensuring compatibility with Qiskit’s QuantumCircuit object.</p>
-<p>Apply Operations: It iterates through the IR’s instruction list, applying each operation (e.g., Hadamard, CNOT, measurement) to the circuit.</p>
-<p>Render the Circuit: Using Qiskit’s visualization tools and Matplotlib, the script generates a graphical representation of the circuit.</p>
-<p>Handle Errors: Unrecognized operations or invalid inputs are logged to aid debugging without crashing the pipeline.</p>
-<p>This pipeline ensures that QUCPL programs, such as the Bell state or quantum teleportation circuits, are visually represented in a way that aligns with their logical structure.</p>
-<h2 id="implementation-details">Implementation Details</h2>
-<p>The visualize.py script is a key deliverable from Week 4, designed to work seamlessly with the IR schema defined in ir_schema_docs.md. Below is the core implementation, adapted from the internship report’s description:</p>
-<p>visualize.py:</p>
-<p><img alt="alt text" src="../images/visualize.png" /></p>
-<p>This script:</p>
-<p>Loads the IR: Reads a JSON file (e.g., bell_ir.json) and parses it into a Python dictionary.</p>
-<p>Builds the Circuit: Creates a Qiskit QuantumCircuit object, mapping qubits and classical bits, and applies operations like h (Hadamard), cx (CNOT), and measure.</p>
-<p>Renders the Diagram: Uses Qiskit’s draw method with Matplotlib to generate and display the circuit diagram, optionally saving it to a file.</p>
-<h2 id="example-visualizing-the-bell-state-circuit">Example: Visualizing the Bell State Circuit</h2>
-<p>To validate the visualization tool, the Bell state program was used as a test case. The program, written in QUCPL syntax, declares two qubits (q0, q1), applies a Hadamard gate to q0, a CNOT gate from q0 to q1, and measures both qubits into classical bits (c0, c1).</p>
-<p>The IR for this program is in bell_ir.json, see IR section.</p>
-<p>Running visualize.py on bell_ir.json produces the following circuit diagram:</p>
-<p><img alt="alt text" src="../images/bell_circuit.png" /></p>
-<p>The diagram shows:</p>
-<p>A Hadamard gate (H) on q0, creating a superposition.
-A CNOT gate (CX) from q0 (control) to q1 (target), entangling the qubits.
-Measurements of q0 and q1 into classical bits c0 and c1.</p>
-<p>This output matches the expected logic of the Bell state, confirming the correctness of the visualization pipeline.
-Integration with QUCPL Toolchain</p>
-<p>This integration allows users to write QUCPL code, compile it to IR, and immediately visualize the resulting circuit, closing the feedback loop for program development and debugging.</p>
-<h2 id="the-current-visualization-tool-is-functional-but-can-be-improved">The current visualization tool is functional but can be improved</h2>
-<p>Interactive Visualizer: Develop a web-based interface for drag-and-drop circuit editing using libraries like D3.js or Plotly.</p>
-<p>Extended Gate Support: Add visualization for additional gates (e.g., rx, ry, rz) and custom multi-qubit gates.</p>
-<p>Real-Time Feedback: Integrate visualization directly into the QUCPL IDE or GUI for immediate circuit previews during coding.</p>
-<p>The visualization module is a cornerstone of QUCPL’s usability, transforming abstract code into intuitive circuit diagrams. By leveraging Qiskit and Matplotlib, it provides a powerful tool for debugging, education, and presentation. The successful visualization of the Bell state circuit demonstrates the module’s effectiveness, and its integration with the broader QUCPL toolchain sets the stage for further advancements in quantum programming.</p>
+<p>This protocol tests QUCPL’s ability to manage quantum gate logic, classical communication, and conditional execution. The week focused on integrating all components developed in prior weeks—parsing, Abstract Syntax Tree (AST) and Intermediate Representation (IR) generation, backend integration, circuit visualization, and simulation—into a robust pipeline capable of executing complex quantum protocols. This effort validated QUCPL’s potential for applications in quantum communication and cryptography.</p>
+<h2 id="theoretical-background">Theoretical Background</h2>
+<p>Quantum teleportation enables the transfer of a quantum state from one qubit to another without physical transmission, leveraging entanglement and classical communication. It adheres to the no-cloning theorem, ensuring the original state is destroyed during the process. The protocol, as implemented in QUCPL, involves:</p>
+<p>Qubit Setup: Qubit q0 holds the input state Alice’s message qubit. Qubits q1 and q2 form an entangled pair shared between Alice q1 and Bob q2.</p>
+<p>Entanglement Stage: A Hadamard gate H on q1 creates superposition, followed by a CNOT gate between q1 control and q2 target, producing a Bell state.</p>
+<p>Bell Measurement: Alice applies a CNOT gate with q0 as control and q1 as target, followed by a Hadamard gate on q0 . Both q0 and q1 are measured into classical bits c0 and c1, collapsing their states and generating two classical bits.</p>
+<p>Conditional Recovery:</p>
+<p>Bob uses the classical bits ( c0 ) and ( c1 ) to apply corrective gates to ( q2 ):</p>
+<p>( c0 = 0, c1 = 0 ): No correction.</p>
+<p>( c0 = 0, c1 = 1 ): Apply ( X ) gate (bit-flip).</p>
+<p>( c0 = 1, c1 = 0 ): Apply ( Z ) gate (phase-flip).</p>
+<p>( c0 = 1, c1 = 1 ): Apply ( Z ) followed by ( X ).</p>
+<p>These corrections reconstruct the original state on ( q2 ).</p>
+<p>Final Measurement: Bob measures ( q2 ) into classical bit ( c2 ) to verify the teleported state matches ( q0 )’s initial state.</p>
+<p>This process relies on entanglement as a resource and two classical bits for communication, making it a cornerstone of quantum information protocols.</p>
+<h2 id="implementation-in-qucpl">Implementation in QUCPL</h2>
+<p>The teleportation protocol was implemented in QUCPL using a clear, modular syntax in the teleportation.qucpl program. Key components include:</p>
+<p><img alt="alt text" src="../images/tele_qpl.png" /></p>
+<p>Qubit and Classical Bit Declarations:</p>
+<p>Qubits: qubit q0, q1, q2;</p>
+<p>Classical bits: c0, c1, c2 for measurements and control.</p>
+<p>Entanglement Creation:</p>
+<p>Apply h q1; to put ( q1 ) in superposition.</p>
+<p>Apply cx q1, q2; to entangle ( q1 ) and ( q2 ).</p>
+<p>Bell Measurement:</p>
+<p>Apply cx q0, q1; and h q0;.</p>
+<p>Measure: measure q0 -&gt; c0; measure q1 -&gt; c1;.</p>
+<p>Conditional Corrections:</p>
+<p>Use conditional statements like:</p>
+<p>if (c0 == 0 &amp;&amp; c1 == 1) { x q2; }</p>
+<p>if (c0 == 1 &amp;&amp; c1 == 0) { z q2; }</p>
+<p>if (c0 == 1 &amp;&amp; c1 == 1) { z q2; x q2; }</p>
+<p>Final Measurement and Output:</p>
+<p>Measure: measure q2 -&gt; c2;.</p>
+<p>Log results using print operations.</p>
+<p>This implementation highlights QUCPL’s ability to express complex quantum protocols in a readable, high-level syntax, suitable for educational and practical applications.</p>
+<h2 id="ast-and-ir-generation">AST and IR Generation</h2>
+<p>The teleportation.qucpl source code was processed through QUCPL’s pipeline:</p>
+<p>Parsing: parser.py generated an AST (tele_ast.json), capturing the program’s structure.</p>
+<p>Compilation: compiler.py transformed the AST into an IR (tele_ir.json), which includes:</p>
+<pre><code>Gate Operations: Hadamard, CNOT, Pauli-X, Pauli-Z.
+
+Barriers: To separate logical phases (entanglement, measurement, correction).
+
+Measurements: Mapping q0, q1, and q2 to c0, c1, and c2.
+
+Control Flow: Conditional if blocks for corrections based on c0 and c1.
+
+Print Operations: For logging results.
+</code></pre>
+<p><img alt="alt text" src="../images/tele-ast-ir.png" /></p>
+<p>The IR’s consistency with QUCPL’s schema confirmed the language’s extensibility for quantum-classical control flow, enabling seamless integration with the simulation backend.</p>
+<h2 id="visualization">Visualization</h2>
+<p>The IR (tele_ir.json) was used to generate a circuit diagram via Qiskit and Matplotlib, visualizing the teleportation protocol’s structure:</p>
+<pre><code>Entanglement of q1 and q2 (Hadamard and CNOT).
+
+Bell measurement on q0 and q1 (CNOT, Hadamard, measurements).
+
+Conditional corrections on q2 (X and Z gates).
+
+Final measurement of q2.
+</code></pre>
+<p><img alt="alt text" src="../images/tele_circuit.png" /></p>
+<p>This diagram confirms the logical flow and correctness of the implementation.</p>
+<h2 id="simulation-results">Simulation Results</h2>
+<p>The simulation was executed using Qiskit’s Aer simulator with 1024 shots, handling conditional execution, measurement mapping, and runtime logging.</p>
+<p>Key details include:</p>
+<pre><code>Backend: Qiskit Aer simulator.
+
+Parameters: 1024 shots for probabilistic outcomes.
+
+Results:Measurement of c2 showed a nearly even distribution of 0 and 1, indicating successful teleportation of a superposed state from q0 to q2.
+</code></pre>
+<p><img alt="alt text" src="../images/tele_hist.png" /></p>
+<p>The histogram visualized this distribution, confirming expected quantum behavior.</p>
+<p>Runtime Logs:</p>
+<p><img alt="alt text" src="../images/tele_log.png" /></p>
+<p>Included gate counts (e.g., number of h, cx, x, z), execution time, and classical bit values.</p>
+<p>These results validated QUCPL’s pipeline, from source code to simulation output.</p>
+<h2 id="runtime-error-handling">Runtime error handling</h2>
+<p>The runtime robustness was significantly improved. The simulator backend was extended to include:</p>
+<p>• Gate Argument Checks: Each operation now validates the number of arguments (e.g., cx must have 2).</p>
+<p>• Name Resolution: Catches undefined qubit or classical bit references.</p>
+<p>• Safe Fallbacks: Invalid instructions are logged and skipped without crashing the pipeline.</p>
+<p>• Gate Usage Logging: Shows total use of each gate type per program.</p>
+<p>Error Examples:</p>
+<p>• [ARGUMENT ERROR] Gate 'cx' expects 2 arguments.</p>
+<p>• [RUNTIME ERROR] Unknown qubit 'q3' in instruction: {...}</p>
+<p>• [SIMULATION ERROR] Backend unavailable.</p>
+<p>These mechanisms ensured smoother development and testing, especially as the language grows to support more complex logic.</p>
+<h2 id="conclusions">Conclusions</h2>
+<p>Implementing quantum teleportation in QUCPL demonstrated the language’s capability to handle sophisticated quantum protocols involving entanglement, measurement, and classical control. The precise ordering of gates and integration of quantum-classical logic tested QUCPL’s robustness, while runtime validation and error handling enhanced reliability. This milestone paves the way for future applications, such as Quantum Key Distribution, and underscores QUCPL’s potential as an educational and practical tool for quantum computing.</p>
 
 
 

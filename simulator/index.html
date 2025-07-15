@@ -6,19 +6,17 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Documentation for QuCPL, a programming language designed for quantum computing.">
+        <meta name="description" content="Documentation for the Quantum Computing Programming Language (QUCPL)">
       
       
-        <meta name="author" content="Tejas.M">
+        <meta name="author" content="Mellimpudi Tejas">
       
       
-        <link rel="canonical" href="https://tejastro123.github.io/qucpl/ir/">
+      
+        <link rel="prev" href="../visualize/">
       
       
-        <link rel="prev" href="../compiler/">
-      
-      
-        <link rel="next" href="../visualize/">
+        <link rel="next" href="../teleportation/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -26,14 +24,11 @@
     
     
       
-        <title>Ir - QuCPL Documentation</title>
+        <title>Simulation - QUCPL Documentation</title>
       
     
     
       <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
-      
-        
-        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -62,12 +57,7 @@
   </head>
   
   
-    
-    
-    
-    
-    
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="deep-purple">
+    <body dir="ltr">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -76,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ir-examples" class="md-skip">
+        <a href="#quantum-simulation-in-qucpl" class="md-skip">
           Skip to content
         </a>
       
@@ -92,7 +82,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="QuCPL Documentation" class="md-header__button md-logo" aria-label="QuCPL Documentation" data-md-component="logo">
+    <a href=".." title="QUCPL Documentation" class="md-header__button md-logo" aria-label="QUCPL Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -106,21 +96,21 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            QuCPL Documentation
+            QUCPL Documentation
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Ir
+              Simulation
             
           </span>
         </div>
       </div>
     </div>
     
-      
     
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
     
@@ -166,7 +156,7 @@
     
     
       <div class="md-header__source">
-        <a href="https://github.com/tejastro123/MY-QuCPL" title="Go to repository" class="md-source" data-md-component="source">
+        <a href="https://github.com/tejastro123/MY-QUCPL" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
@@ -202,17 +192,17 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="QuCPL Documentation" class="md-nav__button md-logo" aria-label="QuCPL Documentation" data-md-component="logo">
+    <a href=".." title="QUCPL Documentation" class="md-nav__button md-logo" aria-label="QUCPL Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    QuCPL Documentation
+    QUCPL Documentation
   </label>
   
     <div class="md-nav__source">
-      <a href="https://github.com/tejastro123/MY-QuCPL" title="Go to repository" class="md-source" data-md-component="source">
+      <a href="https://github.com/tejastro123/MY-QUCPL" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
@@ -254,12 +244,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../language/" class="md-nav__link">
+      <a href="../introduction/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Language Reference
+    Introduction
     
   </span>
   
@@ -276,12 +266,56 @@
   
   
     <li class="md-nav__item">
-      <a href="../programs/" class="md-nav__link">
+      <a href="../quantum_foundations/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Writing QuCPL Programs
+    Quantum Foundations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../entanglement_tele/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Entanglement & Teleportation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../language_design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Language Design
     
   </span>
   
@@ -342,12 +376,34 @@
   
   
     <li class="md-nav__item">
-      <a href="../ast/" class="md-nav__link">
+      <a href="../ast_output/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Ast
+    AST
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ir_schema/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    IR Schema
     
   </span>
   
@@ -383,100 +439,20 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Ir
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../ir_output/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Ir
+    IR
     
   </span>
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#ir-examples" class="md-nav__link">
-    <span class="md-ellipsis">
-      IR Examples
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="IR Examples">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#bell_irjson" class="md-nav__link">
-    <span class="md-ellipsis">
-      bell_ir.json
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ghz_irjson" class="md-nav__link">
-    <span class="md-ellipsis">
-      ghz_ir.json
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#teleportation_irjson" class="md-nav__link">
-    <span class="md-ellipsis">
-      teleportation_ir.json
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -507,10 +483,32 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../simulation/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Simulation
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -521,6 +519,71 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-key-tasks-accomplished" class="md-nav__link">
+    <span class="md-ellipsis">
+      The key tasks accomplished
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#simulator-design-and-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Simulator Design and Implementation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-simulator-was-tested-using-the-bell-state-programs-ir-bell_irjson" class="md-nav__link">
+    <span class="md-ellipsis">
+      The simulator was tested using the Bell state program’s IR (bell_ir.json)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#robust-error-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Robust Error Handling
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -532,12 +595,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../gui_app/" class="md-nav__link">
+      <a href="../teleportation/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    GUI Application
+    Teleportation
     
   </span>
   
@@ -554,12 +617,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../examples/" class="md-nav__link">
+      <a href="../conclusions/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Example Programs
+    Conclusions
     
   </span>
   
@@ -576,12 +639,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../outputs/" class="md-nav__link">
+      <a href="../references/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Outputs Explained
+    References
     
   </span>
   
@@ -598,12 +661,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../developer_note/" class="md-nav__link">
+      <a href="../glossary/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Developer Notes
+    Glossary
     
   </span>
   
@@ -630,6 +693,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -638,44 +703,47 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#ir-examples" class="md-nav__link">
+  <a href="#overview" class="md-nav__link">
     <span class="md-ellipsis">
-      IR Examples
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="IR Examples">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#bell_irjson" class="md-nav__link">
-    <span class="md-ellipsis">
-      bell_ir.json
+      Overview
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#ghz_irjson" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#the-key-tasks-accomplished" class="md-nav__link">
     <span class="md-ellipsis">
-      ghz_ir.json
+      The key tasks accomplished
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#teleportation_irjson" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#simulator-design-and-implementation" class="md-nav__link">
     <span class="md-ellipsis">
-      teleportation_ir.json
+      Simulator Design and Implementation
     </span>
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#the-simulator-was-tested-using-the-bell-state-programs-ir-bell_irjson" class="md-nav__link">
+    <span class="md-ellipsis">
+      The simulator was tested using the Bell state program’s IR (bell_ir.json)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#robust-error-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Robust Error Handling
+    </span>
+  </a>
   
 </li>
       
@@ -698,69 +766,52 @@
   
 
 
-  <h1>Ir</h1>
-
-<h2 id="ir-examples">IR Examples</h2>
-<p>QuCPL's <strong>Intermediate Representation (IR)</strong> is a JSON format designed to bridge the parsed AST and quantum execution. It is backend-agnostic and can be interpreted by Qiskit or other simulators.</p>
-<h3 id="bell_irjson"><code>bell_ir.json</code></h3>
-<pre><code class="language-json">{
-  &quot;type&quot;: &quot;Program&quot;,
-  &quot;qubits&quot;: [&quot;q0&quot;, &quot;q1&quot;],
-  &quot;instructions&quot;: [
-    {&quot;op&quot;: &quot;h&quot;, &quot;args&quot;: [&quot;q0&quot;]},
-    {&quot;op&quot;: &quot;cx&quot;, &quot;args&quot;: [&quot;q0&quot;, &quot;q1&quot;]},
-    {
-      &quot;op&quot;: &quot;measure&quot;,
-      &quot;qubits&quot;: [&quot;q0&quot;, &quot;q1&quot;],
-      &quot;classical&quot;: [&quot;c0&quot;, &quot;c1&quot;]
-    }
-  ],
-  &quot;control_flow&quot;: []
-}
-</code></pre>
-<h3 id="ghz_irjson"><code>ghz_ir.json</code></h3>
-<pre><code class="language-json">{
-  &quot;type&quot;: &quot;Program&quot;,
-  &quot;qubits&quot;: [&quot;q0&quot;, &quot;q1&quot;, &quot;q2&quot;],
-  &quot;instructions&quot;: [
-    {&quot;op&quot;: &quot;h&quot;, &quot;args&quot;: [&quot;q0&quot;]},
-    {&quot;op&quot;: &quot;cx&quot;, &quot;args&quot;: [&quot;q0&quot;, &quot;q1&quot;]},
-    {&quot;op&quot;: &quot;cx&quot;, &quot;args&quot;: [&quot;q0&quot;, &quot;q2&quot;]},
-    {
-      &quot;op&quot;: &quot;measure&quot;,
-      &quot;qubits&quot;: [&quot;q0&quot;, &quot;q1&quot;, &quot;q2&quot;],
-      &quot;classical&quot;: [&quot;c0&quot;, &quot;c1&quot;, &quot;c2&quot;]
-    }
-  ],
-  &quot;control_flow&quot;: []
-}
-</code></pre>
-<h3 id="teleportation_irjson"><code>teleportation_ir.json</code></h3>
-<pre><code class="language-json">{
-  &quot;type&quot;: &quot;Program&quot;,
-  &quot;qubits&quot;: [&quot;q0&quot;, &quot;q1&quot;, &quot;q2&quot;],
-  &quot;instructions&quot;: [
-    {&quot;op&quot;: &quot;h&quot;, &quot;args&quot;: [&quot;q1&quot;]},
-    {&quot;op&quot;: &quot;cx&quot;, &quot;args&quot;: [&quot;q1&quot;, &quot;q2&quot;]},
-    {&quot;op&quot;: &quot;cx&quot;, &quot;args&quot;: [&quot;q0&quot;, &quot;q1&quot;]},
-    {&quot;op&quot;: &quot;h&quot;, &quot;args&quot;: [&quot;q0&quot;]},
-    {
-      &quot;op&quot;: &quot;measure&quot;,
-      &quot;qubits&quot;: [&quot;q0&quot;, &quot;q1&quot;],
-      &quot;classical&quot;: [&quot;c0&quot;, &quot;c1&quot;]
-    }
-  ],
-  &quot;control_flow&quot;: []
-}
-</code></pre>
-<p>Each IR JSON includes:</p>
-<ul>
-<li><code>type</code>: Always <code>"Program"</code></li>
-<li><code>qubits</code>: List of named qubit registers</li>
-<li><code>instructions</code>: Gate applications and measurements</li>
-<li><code>control_flow</code>: Optional structures like <code>if</code>, <code>while</code></li>
-</ul>
-<p>These <code>.json</code> files are used by the simulator to build and execute circuits.</p>
+<h1 id="quantum-simulation-in-qucpl">Quantum Simulation in QUCPL</h1>
+<p>The simulator implemented in the simulator.py script, serves as a critical component of the QUCPL toolchain, enabling the execution of quantum programs by translating the Intermediate Representation (IR) into executable Qiskit circuits and producing meaningful outputs such as measurement counts, statevectors, and histograms.</p>
+<h2 id="overview">Overview</h2>
+<p>The primary objective of Week 5 was to integrate the QUCPL Intermediate Representation (IR) with Qiskit’s backend for circuit execution and simulation. This phase completed the end-to-end pipeline, allowing programs written in QUCPL to be parsed, compiled, and simulated to produce runtime results. The simulator supports a variety of quantum operations, validates program correctness, and provides visual and textual outputs for debugging and analysis.</p>
+<h2 id="the-key-tasks-accomplished">The key tasks accomplished</h2>
+<p>Loading and parsing JSON-based IR files.</p>
+<p>Translating IR instructions into Qiskit-compatible quantum circuits.</p>
+<p>Executing simulations using Qiskit’s Aer simulator with 1024 shots.</p>
+<p>Generating measurement results, histograms missingshot histograms, and runtime logs.</p>
+<p>Implementing error handling for robust operation.</p>
+<h2 id="simulator-design-and-implementation">Simulator Design and Implementation</h2>
+<p>The simulator.py script is the core of the QUCPL simulation pipeline, performing three main functions: IR loading and parsing, IR-to-Qiskit circuit translation, and simulation with output generation.</p>
+<p><img alt="alt text" src="../images/simulate.png" /></p>
+<p>The simulator begins by loading a JSON-based IR file (e.g., bell_ir.json) generated by the QUCPL compiler. The script validates the IR structure to ensure it contains the expected fields, such as declared qubits, classical bits, and instructions. This step ensures compatibility with Qiskit’s execution environment.</p>
+<p>The build_qiskit_circuit(ir) function translates the IR into a Qiskit QuantumCircuit object. It performs the following steps:</p>
+<p>Maps declared qubits and classical bits from the IR to Qiskit’s indexing system.</p>
+<p>Iterates through the IR’s instruction list, applying operations like Hadamard (h), Controlled-NOT (cx), and measurement (measure) to the circuit.</p>
+<p>Validates the number of arguments for each gate (e.g., cx requires two qubits).</p>
+<p>Logs gate usage statistics via a gate_counts dictionary for debugging and optimization insights.</p>
+<p>Reports errors for unrecognized operations or invalid inputs.</p>
+<p>The simulate() function compiles the quantum circuit using Qiskit’s transpile function and executes it on the aer_simulator backend.</p>
+<p>The simulator supports a wide range of quantum gates, including:</p>
+<p>Single-qubit gates: Hadamard (h), Pauli-X (x), Pauli-Y (y), Pauli-Z (z), rotations (rx, ry, rz).</p>
+<p>Multi-qubit gates: Controlled-NOT (cx).</p>
+<p>Measurement operations and statevector computation.</p>
+<h2 id="the-simulator-was-tested-using-the-bell-state-programs-ir-bell_irjson">The simulator was tested using the Bell state program’s IR (bell_ir.json)</h2>
+<p>Running simulator.py on bell_ir.json produced:</p>
+<p><img alt="alt text" src="../images/bell_sim.png" /></p>
+<p>Measurement Results: Approximately equal probabilities for states 00 and 11 (around 50% each), confirming the expected entangled distribution of a Bell state.</p>
+<p>Histogram: A visual representation of the measurement outcomes, saved as histogram.png.</p>
+<p>Backend Runtime Logs:</p>
+<p>Backend: aer_simulator
+Gate Counts: {'h': 1, 'cx': 1, 'measure': 2}
+Measurement Results: {'00': 512, '11': 512}</p>
+<p>These results validated the correctness of the QUCPL pipeline, from parsing to simulation, ensuring that the Bell state’s entanglement was accurately represented and executed.
+Key Features</p>
+<h2 id="robust-error-handling">Robust Error Handling</h2>
+<p>The simulator checks for invalid gate arguments, undefined qubits, and unrecognized operations, logging errors like:</p>
+<p>[ARGUMENT ERROR] Gate 'cx' expects 2 arguments.</p>
+<p>[RUNTIME ERROR] Unknown qubit 'q3' in instruction.</p>
+<p>[SIMULATION ERROR] Backend unavailable.</p>
+<p>Modularity:</p>
+<p>The code is structured to support additional gates and future extensions like control flow or custom protocols.
+Visualization: Integration with Matplotlib for histogram generation aids in debugging and understanding quantum outcomes.
+Performance Tracking: Gate usage statistics and runtime logs provide insights into program efficiency and structure.</p>
+<p>The QUCPL simulator is a robust tool that translates high-level quantum programs into executable circuits, providing both educational and practical value. By integrating with Qiskit, it enables users to experiment with quantum computing concepts like entanglement and superposition in a user-friendly manner. The successful simulation of the Bell state demonstrates the reliability of the pipeline, setting the stage for further development and real-world applications.</p>
 
 
 

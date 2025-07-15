@@ -6,19 +6,17 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Documentation for QuCPL, a programming language designed for quantum computing.">
+        <meta name="description" content="Documentation for the Quantum Computing Programming Language (QUCPL)">
       
       
-        <meta name="author" content="Tejas.M">
+        <meta name="author" content="Mellimpudi Tejas">
       
       
-        <link rel="canonical" href="https://tejastro123.github.io/qucpl/ast/">
+      
+        <link rel="prev" href="../introduction/">
       
       
-        <link rel="prev" href="../parser/">
-      
-      
-        <link rel="next" href="../compiler/">
+        <link rel="next" href="../entanglement_tele/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -26,14 +24,11 @@
     
     
       
-        <title>Ast - QuCPL Documentation</title>
+        <title>Quantum Foundations - QUCPL Documentation</title>
       
     
     
       <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
-      
-        
-        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -62,12 +57,7 @@
   </head>
   
   
-    
-    
-    
-    
-    
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="deep-purple">
+    <body dir="ltr">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -76,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ast-examples" class="md-skip">
+        <a href="#quantum-foundations" class="md-skip">
           Skip to content
         </a>
       
@@ -92,7 +82,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="QuCPL Documentation" class="md-header__button md-logo" aria-label="QuCPL Documentation" data-md-component="logo">
+    <a href=".." title="QUCPL Documentation" class="md-header__button md-logo" aria-label="QUCPL Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -106,21 +96,21 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            QuCPL Documentation
+            QUCPL Documentation
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Ast
+              Quantum Foundations
             
           </span>
         </div>
       </div>
     </div>
     
-      
     
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
     
@@ -166,7 +156,7 @@
     
     
       <div class="md-header__source">
-        <a href="https://github.com/tejastro123/MY-QuCPL" title="Go to repository" class="md-source" data-md-component="source">
+        <a href="https://github.com/tejastro123/MY-QUCPL" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
@@ -202,17 +192,17 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="QuCPL Documentation" class="md-nav__button md-logo" aria-label="QuCPL Documentation" data-md-component="logo">
+    <a href=".." title="QUCPL Documentation" class="md-nav__button md-logo" aria-label="QUCPL Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    QuCPL Documentation
+    QUCPL Documentation
   </label>
   
     <div class="md-nav__source">
-      <a href="https://github.com/tejastro123/MY-QuCPL" title="Go to repository" class="md-source" data-md-component="source">
+      <a href="https://github.com/tejastro123/MY-QUCPL" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
@@ -254,12 +244,152 @@
   
   
     <li class="md-nav__item">
-      <a href="../language/" class="md-nav__link">
+      <a href="../introduction/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Language Reference
+    Introduction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Quantum Foundations
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Quantum Foundations
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-to-quantum-computing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction to QUANTUM COMPUTING
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qubit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Qubit
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bloch-sphere" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloch Sphere
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quantum-gates-and-circuits" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quantum Gates and Circuits
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-codes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example codes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../entanglement_tele/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Entanglement & Teleportation
     
   </span>
   
@@ -276,12 +406,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../programs/" class="md-nav__link">
+      <a href="../language_design/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Writing QuCPL Programs
+    Language Design
     
   </span>
   
@@ -339,100 +469,42 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Ast
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../ast_output/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Ast
+    AST
     
   </span>
   
 
       </a>
-      
-        
+    </li>
+  
 
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+    
       
-        <li class="md-nav__item">
-  <a href="#ast-examples" class="md-nav__link">
-    <span class="md-ellipsis">
-      AST Examples
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="AST Examples">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#bell_astjson" class="md-nav__link">
-    <span class="md-ellipsis">
-      bell_ast.json
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ghz_astjson" class="md-nav__link">
-    <span class="md-ellipsis">
-      ghz_ast.json
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#teleportation_astjson" class="md-nav__link">
-    <span class="md-ellipsis">
-      teleportation_ast.json
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
       
-    </ul>
   
-</nav>
-      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ir_schema/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    IR Schema
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -466,12 +538,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../ir/" class="md-nav__link">
+      <a href="../ir_output/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Ir
+    IR
     
   </span>
   
@@ -510,7 +582,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../simulation/" class="md-nav__link">
+      <a href="../simulator/" class="md-nav__link">
         
   
   
@@ -532,12 +604,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../gui_app/" class="md-nav__link">
+      <a href="../teleportation/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    GUI Application
+    Teleportation
     
   </span>
   
@@ -554,12 +626,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../examples/" class="md-nav__link">
+      <a href="../conclusions/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Example Programs
+    Conclusions
     
   </span>
   
@@ -576,12 +648,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../outputs/" class="md-nav__link">
+      <a href="../references/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Outputs Explained
+    References
     
   </span>
   
@@ -598,12 +670,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../developer_note/" class="md-nav__link">
+      <a href="../glossary/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Developer Notes
+    Glossary
     
   </span>
   
@@ -630,6 +702,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -638,44 +712,56 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#ast-examples" class="md-nav__link">
+  <a href="#introduction-to-quantum-computing" class="md-nav__link">
     <span class="md-ellipsis">
-      AST Examples
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="AST Examples">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#bell_astjson" class="md-nav__link">
-    <span class="md-ellipsis">
-      bell_ast.json
+      Introduction to QUANTUM COMPUTING
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#ghz_astjson" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#qubit" class="md-nav__link">
     <span class="md-ellipsis">
-      ghz_ast.json
+      Qubit
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#teleportation_astjson" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#bloch-sphere" class="md-nav__link">
     <span class="md-ellipsis">
-      teleportation_ast.json
+      Bloch Sphere
     </span>
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#quantum-gates-and-circuits" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quantum Gates and Circuits
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-codes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example codes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
   
 </li>
       
@@ -698,58 +784,60 @@
   
 
 
-  <h1>Ast</h1>
-
-<h2 id="ast-examples">AST Examples</h2>
-<p>The <strong>Abstract Syntax Tree (AST)</strong> is the structured representation generated after parsing a <code>.qucpl</code> file. This tree retains the syntactic structure of the source code and serves as the input to the QuCPL compiler.</p>
-<p>Below are AST examples for three common quantum programs:</p>
-<h3 id="bell_astjson"><code>bell_ast.json</code></h3>
-<pre><code class="language-json">{
-  &quot;type&quot;: &quot;Program&quot;,
-  &quot;body&quot;: [
-    {&quot;type&quot;: &quot;QubitDeclaration&quot;, &quot;qubits&quot;: [&quot;q0&quot;, &quot;q1&quot;]},
-    {&quot;type&quot;: &quot;GateOperation&quot;, &quot;gate&quot;: &quot;H&quot;, &quot;args&quot;: [&quot;q0&quot;]},
-    {&quot;type&quot;: &quot;GateOperation&quot;, &quot;gate&quot;: &quot;CX&quot;, &quot;args&quot;: [&quot;q0&quot;, &quot;q1&quot;]},
-    {&quot;type&quot;: &quot;Measurement&quot;, &quot;qubit&quot;: &quot;q0&quot;, &quot;target&quot;: &quot;c0&quot;},
-    {&quot;type&quot;: &quot;Measurement&quot;, &quot;qubit&quot;: &quot;q1&quot;, &quot;target&quot;: &quot;c1&quot;}
-  ]
-}
-</code></pre>
-<h3 id="ghz_astjson"><code>ghz_ast.json</code></h3>
-<pre><code class="language-json">{
-  &quot;type&quot;: &quot;Program&quot;,
-  &quot;body&quot;: [
-    {&quot;type&quot;: &quot;QubitDeclaration&quot;, &quot;qubits&quot;: [&quot;q0&quot;, &quot;q1&quot;, &quot;q2&quot;]},
-    {&quot;type&quot;: &quot;GateOperation&quot;, &quot;gate&quot;: &quot;H&quot;, &quot;args&quot;: [&quot;q0&quot;]},
-    {&quot;type&quot;: &quot;GateOperation&quot;, &quot;gate&quot;: &quot;CX&quot;, &quot;args&quot;: [&quot;q0&quot;, &quot;q1&quot;]},
-    {&quot;type&quot;: &quot;GateOperation&quot;, &quot;gate&quot;: &quot;CX&quot;, &quot;args&quot;: [&quot;q0&quot;, &quot;q2&quot;]},
-    {&quot;type&quot;: &quot;Measurement&quot;, &quot;qubit&quot;: &quot;q0&quot;, &quot;target&quot;: &quot;c0&quot;},
-    {&quot;type&quot;: &quot;Measurement&quot;, &quot;qubit&quot;: &quot;q1&quot;, &quot;target&quot;: &quot;c1&quot;},
-    {&quot;type&quot;: &quot;Measurement&quot;, &quot;qubit&quot;: &quot;q2&quot;, &quot;target&quot;: &quot;c2&quot;}
-  ]
-}
-</code></pre>
-<h3 id="teleportation_astjson"><code>teleportation_ast.json</code></h3>
-<pre><code class="language-json">{
-  &quot;type&quot;: &quot;Program&quot;,
-  &quot;body&quot;: [
-    {&quot;type&quot;: &quot;QubitDeclaration&quot;, &quot;qubits&quot;: [&quot;q0&quot;, &quot;q1&quot;, &quot;q2&quot;]},
-    {&quot;type&quot;: &quot;GateOperation&quot;, &quot;gate&quot;: &quot;H&quot;, &quot;args&quot;: [&quot;q1&quot;]},
-    {&quot;type&quot;: &quot;GateOperation&quot;, &quot;gate&quot;: &quot;CX&quot;, &quot;args&quot;: [&quot;q1&quot;, &quot;q2&quot;]},
-    {&quot;type&quot;: &quot;GateOperation&quot;, &quot;gate&quot;: &quot;CX&quot;, &quot;args&quot;: [&quot;q0&quot;, &quot;q1&quot;]},
-    {&quot;type&quot;: &quot;GateOperation&quot;, &quot;gate&quot;: &quot;H&quot;, &quot;args&quot;: [&quot;q0&quot;]},
-    {&quot;type&quot;: &quot;Measurement&quot;, &quot;qubit&quot;: &quot;q0&quot;, &quot;target&quot;: &quot;c0&quot;},
-    {&quot;type&quot;: &quot;Measurement&quot;, &quot;qubit&quot;: &quot;q1&quot;, &quot;target&quot;: &quot;c1&quot;}
-  ]
-}
-</code></pre>
-<p>Each AST object contains:</p>
-<ul>
-<li><code>QubitDeclaration</code>: Declares one or more quantum registers</li>
-<li><code>GateOperation</code>: Describes a single- or multi-qubit gate</li>
-<li><code>Measurement</code>: Maps quantum measurements to classical bits</li>
-</ul>
-<p>These JSON structures are saved to <code>ast.json</code> by the parser and passed to the compiler for IR generation.</p>
+<h1 id="quantum-foundations">Quantum Foundations</h1>
+<p>The first week of the internship focused on building a strong foundation in quantum computing concepts while gaining hands-on experience with the Qiskit framework developed by IBM. The specific learning objectives for this phase were:</p>
+<p>• To understand the principles of quantum mechanics relevant to computing, such as superposition, entanglement, measurement, and quantum gates.</p>
+<p>• To explore how quantum information is represented using qubits and how quantum logic gates manipulate quantum states.</p>
+<p>• To get familiar with Qiskit’s environment, syntax, and tools for creating and simulating quantum circuits.</p>
+<p>• To implement a basic quantum program—namely, the Bell state circuit—as a proof of concept.</p>
+<p>• To produce a short technical report titled “What is a Qubit?” for reinforcing understanding and documentation.</p>
+<h2 id="introduction-to-quantum-computing">Introduction to QUANTUM COMPUTING</h2>
+<p>• Quantum Computing is a field of computing that uses the principles of quantum mechanics—the physics of subatomic particles—to process information.</p>
+<p>• Instead of bits, it uses qubits, which can exist in multiple states at once due to quantum phenomena like superposition and entanglement.</p>
+<p>• Quantum Computing uses the laws of quantum mechanics to enable massive parallelism and new ways to solve complex problems  that are currently infeasible for classical computers.</p>
+<p>• Can evaluate many possibilities simultaneously.</p>
+<p>• Offers exponential speedups for certain tasks.</p>
+<p>• Outputs are probabilistic, not fixed, and require multiple runs to determine likely results.</p>
+<p>• Classical Bit: 0 and 1     Quantum Qubit: |ψ⟩= α|0⟩+ β|1⟩ (α and β are complex numbers, |α|² + |β|² = 1)</p>
+<p>• Applications of Quantum Computing : Cryptography, Simulating molecules and interactions, AI &amp; ML models, Optimization, etc.</p>
+<h2 id="qubit">Qubit</h2>
+<p>The Building Block of Quantum Computing</p>
+<p>A qubit (quantum bit) is the basic unit of quantum information, distinct from a classical bit. Unlike a classical bit, which is either 0 or 1, a qubit can exist in a superposition of both states at once, enabling quantum computers to tackle certain problems far more efficiently than classical systems.</p>
+<p>The state of a qubit is expressed mathematically as: |ψ⟩= α|0⟩+ β|1</p>
+<p>where:
+alpha, beta are complex probability amplitudes.</p>
+<p>( |α|^2 ) and ( |β|^2 ) represent the probabilities of measuring 0 or 1, respectively.</p>
+<p>The condition ( |α|^2 + |β|^2 = 1 ) ensures normalization.</p>
+<h2 id="bloch-sphere">Bloch Sphere</h2>
+<p>Visualizing Qubits</p>
+<p>The Bloch sphere offers a visual representation of a qubit’s state, aiding in the comprehension of quantum operations.</p>
+<p><img alt="alt text" src="../images/bex.png" /></p>
+<p>Coordinates: A Bloch vector <img alt="alt text" src="../images/vector.png" /> defines the qubit’s state.</p>
+<p>Angles: theta, polar, and phi (azimuthal) position the state on the sphere.</p>
+<p>This tool is invaluable for visualizing how quantum gates manipulate qubit states through rotations.</p>
+<h2 id="quantum-gates-and-circuits">Quantum Gates and Circuits</h2>
+<p>Quantum gates, the counterparts to classical logic gates, are unitary operations that manipulate qubits reversibly.</p>
+<p>Common Quantum Gates:</p>
+<p>Hadamard Gate (H): Generates superposition.</p>
+<p>Pauli-X Gate (X): Flips the qubit state (e.g., ( |0\rangle ) to ( |1\rangle )).</p>
+<p>Pauli-Y Gate (Y): Rotates the state by π radians around the Y-axis.</p>
+<p>Pauli-Z Gate (Z): Introduces a phase flip, altering the sign of ( |1\rangle ).</p>
+<p>CNOT Gate: Flips the target qubit based on the control qubit’s state.</p>
+<p><img alt="alt text" src="../images/gates.png" /></p>
+<p>These gates are critical for building quantum circuits and were integrated into QUCPL.</p>
+<p>Example:</p>
+<p>Bell State Circuit in Qiskit
+Below is a Qiskit implementation of a Bell state circuit to illustrate entanglement:</p>
+<p>Steps Explained:</p>
+<p>Hadamard Gate: Creates superposition on qubit 0.</p>
+<p>CNOT Gate: Entangles qubits 0 and 1.</p>
+<p>Measurement: Yields outcomes 00 or 11 with equal probability, confirming entanglement.</p>
+<h2 id="example-codes">Example codes</h2>
+<p><img alt="alt text" src="../images/qubit.png" />
+<img alt="alt text" src="../images/qubit_output.png" /></p>
+<p><img alt="alt text" src="../images/bloch.png" /></p>
+<h2 id="summary">Summary</h2>
+<p>The concepts of qubits, superposition, entanglement, and quantum gates form the bedrock of quantum computing and QUCPL’s functionality. Practical examples like the Bell state circuit demonstrate how these principles translate into real-world applications, paving the way for deeper quantum programming advancements.</p>
 
 
 

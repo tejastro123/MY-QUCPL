@@ -6,17 +6,15 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Documentation for QuCPL, a programming language designed for quantum computing.">
+        <meta name="description" content="Documentation for the Quantum Computing Programming Language (QUCPL)">
       
       
-        <meta name="author" content="Tejas.M">
-      
-      
-        <link rel="canonical" href="https://tejastro123.github.io/qucpl/">
+        <meta name="author" content="Mellimpudi Tejas">
       
       
       
-        <link rel="next" href="language/">
+      
+        <link rel="next" href="introduction/">
       
       
       <link rel="icon" href="assets/images/favicon.png">
@@ -24,14 +22,11 @@
     
     
       
-        <title>QuCPL Documentation</title>
+        <title>QUCPL Documentation</title>
       
     
     
       <link rel="stylesheet" href="assets/stylesheets/main.342714a4.min.css">
-      
-        
-        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -60,12 +55,7 @@
   </head>
   
   
-    
-    
-    
-    
-    
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="deep-purple">
+    <body dir="ltr">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -74,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#qucpl-documentation" class="md-skip">
+        <a href="#welcome-to-qucpl-documentation" class="md-skip">
           Skip to content
         </a>
       
@@ -90,7 +80,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="QuCPL Documentation" class="md-header__button md-logo" aria-label="QuCPL Documentation" data-md-component="logo">
+    <a href="." title="QUCPL Documentation" class="md-header__button md-logo" aria-label="QUCPL Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -104,7 +94,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            QuCPL Documentation
+            QUCPL Documentation
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -117,8 +107,8 @@
       </div>
     </div>
     
-      
     
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
     
@@ -164,7 +154,7 @@
     
     
       <div class="md-header__source">
-        <a href="https://github.com/tejastro123/MY-QuCPL" title="Go to repository" class="md-source" data-md-component="source">
+        <a href="https://github.com/tejastro123/MY-QUCPL" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
@@ -200,17 +190,17 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="QuCPL Documentation" class="md-nav__button md-logo" aria-label="QuCPL Documentation" data-md-component="logo">
+    <a href="." title="QUCPL Documentation" class="md-nav__button md-logo" aria-label="QUCPL Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    QuCPL Documentation
+    QUCPL Documentation
   </label>
   
     <div class="md-nav__source">
-      <a href="https://github.com/tejastro123/MY-QuCPL" title="Go to repository" class="md-source" data-md-component="source">
+      <a href="https://github.com/tejastro123/MY-QUCPL" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
@@ -280,36 +270,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#what-is-quantum-computing" class="md-nav__link">
+  <a href="#about-me" class="md-nav__link">
     <span class="md-ellipsis">
-      🔭 What is Quantum Computing?
+      About Me
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#what-is-a-qubit" class="md-nav__link">
+  <a href="#project-overview" class="md-nav__link">
     <span class="md-ellipsis">
-      🧠 What is a Qubit?
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#introducing-qucpl" class="md-nav__link">
-    <span class="md-ellipsis">
-      💻 Introducing QuCPL
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#what-youll-find-in-this-documentation" class="md-nav__link">
-    <span class="md-ellipsis">
-      📦 What You'll Find in This Documentation
+      Project Overview
     </span>
   </a>
   
@@ -330,12 +302,12 @@
   
   
     <li class="md-nav__item">
-      <a href="language/" class="md-nav__link">
+      <a href="introduction/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Language Reference
+    Introduction
     
   </span>
   
@@ -352,12 +324,56 @@
   
   
     <li class="md-nav__item">
-      <a href="programs/" class="md-nav__link">
+      <a href="quantum_foundations/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Writing QuCPL Programs
+    Quantum Foundations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="entanglement_tele/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Entanglement & Teleportation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="language_design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Language Design
     
   </span>
   
@@ -418,12 +434,34 @@
   
   
     <li class="md-nav__item">
-      <a href="ast/" class="md-nav__link">
+      <a href="ast_output/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Ast
+    AST
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ir_schema/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    IR Schema
     
   </span>
   
@@ -462,12 +500,12 @@
   
   
     <li class="md-nav__item">
-      <a href="ir/" class="md-nav__link">
+      <a href="ir_output/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Ir
+    IR
     
   </span>
   
@@ -506,7 +544,7 @@
   
   
     <li class="md-nav__item">
-      <a href="simulation/" class="md-nav__link">
+      <a href="simulator/" class="md-nav__link">
         
   
   
@@ -528,12 +566,12 @@
   
   
     <li class="md-nav__item">
-      <a href="gui_app/" class="md-nav__link">
+      <a href="teleportation/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    GUI Application
+    Teleportation
     
   </span>
   
@@ -550,12 +588,12 @@
   
   
     <li class="md-nav__item">
-      <a href="examples/" class="md-nav__link">
+      <a href="conclusions/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Example Programs
+    Conclusions
     
   </span>
   
@@ -572,12 +610,12 @@
   
   
     <li class="md-nav__item">
-      <a href="outputs/" class="md-nav__link">
+      <a href="references/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Outputs Explained
+    References
     
   </span>
   
@@ -594,12 +632,12 @@
   
   
     <li class="md-nav__item">
-      <a href="developer_note/" class="md-nav__link">
+      <a href="glossary/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Developer Notes
+    Glossary
     
   </span>
   
@@ -636,36 +674,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#what-is-quantum-computing" class="md-nav__link">
+  <a href="#about-me" class="md-nav__link">
     <span class="md-ellipsis">
-      🔭 What is Quantum Computing?
+      About Me
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#what-is-a-qubit" class="md-nav__link">
+  <a href="#project-overview" class="md-nav__link">
     <span class="md-ellipsis">
-      🧠 What is a Qubit?
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#introducing-qucpl" class="md-nav__link">
-    <span class="md-ellipsis">
-      💻 Introducing QuCPL
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#what-youll-find-in-this-documentation" class="md-nav__link">
-    <span class="md-ellipsis">
-      📦 What You'll Find in This Documentation
+      Project Overview
     </span>
   </a>
   
@@ -690,52 +710,17 @@
   
 
 
-<h1 id="qucpl-documentation">QuCPL Documentation</h1>
-<p>Welcome to the <strong>QuCPL</strong> Documentation — the official guide for using, understanding, and contributing to the Quantum Computing Programming Language.</p>
-<p>QuCPL is a domain-specific language (DSL) built on Python, designed for educational and research purposes. It combines custom syntax, a parser/compiler system, quantum circuit simulation, and a GUI application for an intuitive and visual approach to quantum programming.</p>
-<hr />
-<h2 id="what-is-quantum-computing">🔭 What is Quantum Computing?</h2>
-<p>Quantum computing is a transformative field of computing that leverages the principles of quantum mechanics to perform operations on data. Unlike classical computers, which use binary bits (<code>0</code> or <code>1</code>), quantum computers use <strong>qubits</strong> that can exist in superpositions of states, allowing them to process vast combinations of possibilities simultaneously.</p>
-<p>Quantum computers can solve certain problems exponentially faster than classical ones — such as factoring large numbers (Shor’s algorithm), searching unsorted databases (Grover’s algorithm), and simulating quantum systems in physics, chemistry, and cryptography.</p>
-<hr />
-<h2 id="what-is-a-qubit">🧠 What is a Qubit?</h2>
-<p>A <strong>qubit</strong> (quantum bit) is the fundamental unit of quantum information. It can be in the state <code>|0⟩</code>, <code>|1⟩</code>, or any complex linear combination:</p>
-<pre><code>|ψ⟩ = α|0⟩ + β|1⟩
-</code></pre>
-<p>Where:</p>
-<ul>
-<li><code>α</code> and <code>β</code> are complex probability amplitudes</li>
-<li><code>|α|² + |β|² = 1</code></li>
-<li>The state collapses to either <code>|0⟩</code> or <code>|1⟩</code> upon measurement</li>
-</ul>
-<p>Qubits can also be <strong>entangled</strong>, meaning their states are correlated no matter the physical distance between them — a crucial property for quantum teleportation and quantum communication.</p>
-<hr />
-<h2 id="introducing-qucpl">💻 Introducing QuCPL</h2>
-<p><strong>QuCPL</strong> (Quantum Computing Programming Language) is an educational-friendly quantum language designed to simplify quantum programming. It features:</p>
-<ul>
-<li>A readable syntax inspired by C/Python</li>
-<li>A custom compiler that outputs an intermediate JSON representation</li>
-<li>A simulator built on Qiskit</li>
-<li>A GUI studio with tabs for writing, simulating, and visualizing circuits</li>
-</ul>
-<p>QuCPL abstracts the complexity of backend circuit manipulation and allows users to focus on <strong>algorithmic thinking and quantum logic</strong>.</p>
-<hr />
-<h2 id="what-youll-find-in-this-documentation">📦 What You'll Find in This Documentation</h2>
-<p>This site is structured to help you get started with QuCPL and dive deep into its components:</p>
-<ul>
-<li>📘 <strong>Language Reference</strong>: Syntax, gates, measurement rules</li>
-<li>✍️ <strong>Writing QuCPL Programs</strong>: Sample code and real examples</li>
-<li>📐 <strong>Grammar &amp; Parser</strong>: The PEG grammar used and parsing pipeline</li>
-<li>🛠️ <strong>Compiler</strong>: AST to IR translation and IR schema</li>
-<li>📊 <strong>Visualization &amp; Simulation</strong>: How results are generated and displayed</li>
-<li>🖥️ <strong>GUI Application</strong>: Interface features and usage</li>
-<li>💾 <strong>Outputs Explained</strong>: All exportable files and formats</li>
-<li>💡 <strong>Developer Notes</strong>: Internal architecture and contribution tips</li>
-</ul>
-<p>Use the navigation bar to explore each section in depth. Whether you're a student, educator, or enthusiast, <strong>QuCPL</strong> is your gateway to practical quantum programming.</p>
-<hr />
-<p>Happy coding, and welcome to the quantum era! ✨</p>
-<p>run mkdocs: mkdocs serve</p>
+<h1 id="welcome-to-qucpl-documentation">Welcome to QUCPL Documentation</h1>
+<p>This site documents the Quantum Computing Programming Language (QUCPL) project, developed by Mellimpudi Tejas during a Practice School-I internship at Quinfo Systems Pvt. Ltd, Hyderabad, under the guidance of BITS Pilani.</p>
+<h2 id="about-me">About Me</h2>
+<p>Name: Mellimpudi Tejas</p>
+<p>ID: 2023B5A70802H</p>
+<p>Discipline: MSc Physics, BE CSE (Dual)</p>
+<p>Institution: BITS Pilani, Hyderabad Campus</p>
+<p>Email: <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#102;&#50;&#48;&#50;&#51;&#48;&#56;&#48;&#50;&#64;&#104;&#121;&#100;&#101;&#114;&#97;&#98;&#97;&#100;&#46;&#98;&#105;&#116;&#115;&#45;&#112;&#105;&#108;&#97;&#110;&#105;&#46;&#97;&#99;&#46;&#105;&#110;">&#102;&#50;&#48;&#50;&#51;&#48;&#56;&#48;&#50;&#64;&#104;&#121;&#100;&#101;&#114;&#97;&#98;&#97;&#100;&#46;&#98;&#105;&#116;&#115;&#45;&#112;&#105;&#108;&#97;&#110;&#105;&#46;&#97;&#99;&#46;&#105;&#110;</a></p>
+<h2 id="project-overview">Project Overview</h2>
+<p>QUCPL is a custom domain-specific language designed to simplify quantum programming. This documentation covers its development, from quantum foundations to implementation, including code, theory, and visualizations from my internship report (July 2025).
+Explore the sections below to learn more about quantum computing, QUCPL’s design, and its capabilities.</p>
 
 
 
