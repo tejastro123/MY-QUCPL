@@ -3,53 +3,27 @@
   "body": [
     {
       "type": "QubitDecl",
-      "qubits": [
-        [
-          "q0",
-          "q1",
-          "q2"
-        ]
-      ]
+      "qubits": [["q0", "q1", "q2"]]
     },
     {
       "type": "QuantumOp",
       "gate": "h",
-      "qubits": [
-        "q0"
-      ]
+      "qubits": ["q0"]
     },
     {
       "type": "QuantumOp",
       "gate": "cx",
-      "qubits": [
-        "q0",
-        "q1"
-      ]
+      "qubits": ["q0", "q1"]
     },
     {
       "type": "QuantumOp",
       "gate": "cx",
-      "qubits": [
-        "q1",
-        "q2"
-      ]
+      "qubits": ["q1", "q2"]
     },
     {
       "type": "Measure",
-      "qubits": [
-        [
-          "q0",
-          "q1",
-          "q2"
-        ]
-      ],
-      "classical": [
-        [
-          "c0",
-          "c1",
-          "c2"
-        ]
-      ]
+      "qubits": [["q0", "q1", "q2"]],
+      "classical": [["c0", "c1", "c2"]]
     },
     {
       "type": "If",
@@ -60,19 +34,11 @@
       },
       "then": {
         "type": "Print",
-        "args": [
-          [
-            "c0"
-          ]
-        ]
+        "args": [["c0"]]
       },
       "else": {
         "type": "Print",
-        "args": [
-          [
-            "c1"
-          ]
-        ]
+        "args": [["c1"]]
       }
     }
   ]
