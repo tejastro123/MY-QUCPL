@@ -6,7 +6,7 @@ import json
 from backend.parser import parse_qucpl
 from backend.visualize import visualize_circuit
 from backend.compiler import ast_to_ir
-from backend.simulator import simulate, generate_histogram
+from backend.simulator import simulate
 from backend.utils import open_file, save_file, format_json
 
 from ui.editor import CodeEditor
@@ -67,7 +67,12 @@ class QuickIDE(tk.Tk):
         toolbar.pack(side=tk.TOP, fill=tk.X)
 
     def _create_panels(self):
-        self.main_panes = ttk.Panedwindow(self, orient=tk.HORIZONTAL)
+        # Container frame to hold top (paned layout) and bottom (console)
+        container = ttk.Frame(self)
+        container.pack(fill=tk.BOTH, expand=True)
+
+        # Create Paned Window for main content
+        self.main_panes = ttk.Panedwindow(container, orient=tk.HORIZONTAL)
 
         # Left Pane: Editor + Circuit Visualizer
         left_pane = ttk.Panedwindow(self.main_panes, orient=tk.VERTICAL)
@@ -75,12 +80,18 @@ class QuickIDE(tk.Tk):
         editor_frame = ttk.Labelframe(left_pane, text="QuCPL Code Editor")
         self.editor = CodeEditor(editor_frame)
         self.editor.pack(fill=tk.BOTH, expand=True)
-        left_pane.add(editor_frame, weight=3)
+        left_pane.add(editor_frame, weight=1)
 
         visualizer_frame = ttk.Labelframe(left_pane, text="Circuit Visualization")
         self.visualizer = CircuitVisualizer(visualizer_frame)
         self.visualizer.pack(fill=tk.BOTH, expand=True)
         left_pane.add(visualizer_frame, weight=2)
+
+        # Console Frame (at the bottom left of the container)
+        console_frame = ttk.Labelframe(left_pane, text="Console Output")
+        self.console = TerminalOutput(console_frame)
+        self.console.pack(fill=tk.BOTH, expand=True)
+        left_pane.add(console_frame, weight=2)
 
         self.main_panes.add(left_pane, weight=3)
 
@@ -95,21 +106,18 @@ class QuickIDE(tk.Tk):
         histogram_frame = ttk.Labelframe(right_pane, text="Simulation Histogram")
         self.histogram = HistogramViewer(histogram_frame)
         self.histogram.pack(fill=tk.BOTH, expand=True)
-        right_pane.add(histogram_frame, weight=2)
+        right_pane.add(histogram_frame, weight=3)
 
         tutorial_frame = ttk.Labelframe(right_pane, text="Tutorials")
         self.tutorial_viewer = TutorialViewer(tutorial_frame)
         self.tutorial_viewer.pack(fill=tk.BOTH, expand=True)
-        right_pane.add(tutorial_frame, weight=1)  # Shrunk weight
+        right_pane.add(tutorial_frame, weight=2)
 
         self.main_panes.add(right_pane, weight=2)
+
+        # Pack main panes
         self.main_panes.pack(fill=tk.BOTH, expand=True)
 
-        # Console at Bottom
-        console_frame = ttk.Labelframe(self, text="Console Output")
-        self.console = TerminalOutput(console_frame)
-        self.console.pack(fill=tk.BOTH, expand=True)
-        console_frame.pack(fill=tk.X)
 
     def load_code(self):
         content, path = open_file(filetypes=[("QuCPL Files", "*.qucpl")])
@@ -151,8 +159,7 @@ class QuickIDE(tk.Tk):
         try:
             if not hasattr(self, 'ir'):
                 self.run_compile()
-            self.visualizer.display_circuit(self.ir, title="Compiled Circuit")
-            visualize_circuit(self.ir, "Compiled Circuit")
+            self.visualizer.display_circuit(self.ir, title="Quantum Circuit")
             self.log("[SUCCESS] Circuit visualized.\n")
         except Exception as e:
             self.log(f"[ERROR] Visualization Error: {e}\n")

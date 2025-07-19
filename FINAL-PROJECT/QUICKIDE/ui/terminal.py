@@ -1,3 +1,4 @@
+# terminal.py
 import tkinter as tk
 from tkinter import ttk
 from tkinter.scrolledtext import ScrolledText
@@ -7,8 +8,12 @@ class TerminalOutput(ttk.Frame):
     def __init__(self, master=None):
         super().__init__(master)
 
-        self.output = ScrolledText(self, height=10, wrap=tk.WORD, state='disabled')
+        self.output = ScrolledText(self, height=10, wrap=tk.WORD)
         self.output.pack(fill=tk.BOTH, expand=True)
+
+        # Optional: color-coded tags
+        self.output.tag_configure("stdout", foreground="black")
+        self.output.tag_configure("stderr", foreground="red")
 
         self._redirect_stdout()
         self._redirect_stderr()
@@ -20,15 +25,11 @@ class TerminalOutput(ttk.Frame):
         sys.stderr = self.TextRedirector(self.output, "stderr")
 
     def clear(self):
-        self.output.config(state='normal')
         self.output.delete("1.0", tk.END)
-        self.output.config(state='disabled')
 
     def log(self, message):
-        self.output.config(state='normal')
-        self.output.insert(tk.END, message + '\n')
+        self.output.insert(tk.END, message + '\n', "stdout")
         self.output.see(tk.END)
-        self.output.config(state='disabled')
 
     class TextRedirector:
         def __init__(self, widget, tag):
@@ -36,10 +37,8 @@ class TerminalOutput(ttk.Frame):
             self.tag = tag
 
         def write(self, message):
-            self.widget.config(state='normal')
-            self.widget.insert(tk.END, message)
+            self.widget.insert(tk.END, message, self.tag)
             self.widget.see(tk.END)
-            self.widget.config(state='disabled')
 
         def flush(self):
             pass

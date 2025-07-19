@@ -128,8 +128,12 @@ def simulate(ir, title="Quantum Simulation"):
 
         fig = plot_histogram(counts)
         fig.suptitle(title)
-        plt.show()
-        return fig
+        # Save plot to PNG in memory
+        buf = io.BytesIO()
+        fig.savefig(buf, format='png')
+        plt.close(fig)
+        buf.seek(0)
+        return buf.getvalue() 
         
     except Exception as e:
         print(f"[SIMULATION ERROR] {e}")
