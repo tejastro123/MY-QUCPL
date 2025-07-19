@@ -1,8 +1,11 @@
 import json
 import matplotlib.pyplot as plt
-from qiskit import QuantumCircuit, Aer, execute, transpile
+from qiskit import QuantumCircuit, transpile
+from qiskit_aer import Aer
 from qiskit.visualization import plot_histogram, plot_bloch_multivector
 from qiskit.quantum_info import Statevector
+import matplotlib.pyplot as plt
+import io
 
 
 def simulate_convert(value: int):
@@ -104,7 +107,6 @@ def build_qiskit_circuit(ir):
 
     return qc, classical_bits
 
-
 def simulate(ir, title="Quantum Simulation"):
     result = build_qiskit_circuit(ir)
     if result is None or result[0] is None:
@@ -124,8 +126,11 @@ def simulate(ir, title="Quantum Simulation"):
         print("Backend:", sim.name)
         print("Total time taken:", result.time_taken, "seconds")
 
-        plot_histogram(counts, title=title)
+        fig = plot_histogram(counts)
+        fig.suptitle(title)
         plt.show()
+        return fig
+        
     except Exception as e:
         print(f"[SIMULATION ERROR] {e}")
 

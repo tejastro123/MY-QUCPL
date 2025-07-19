@@ -6,7 +6,7 @@ import json
 from backend.parser import parse_qucpl
 from backend.visualize import visualize_circuit
 from backend.compiler import ast_to_ir
-from backend.simulator import simulate
+from backend.simulator import simulate, generate_histogram
 from backend.utils import open_file, save_file, format_json
 
 from ui.editor import CodeEditor
@@ -14,13 +14,14 @@ from ui.viewer import ViewerPanel
 from ui.visualizer import CircuitVisualizer
 from ui.terminal import TerminalOutput
 from ui.tutorials import TutorialViewer
+from ui.histogram import HistogramViewer  # New GUI panel for simulation histogram
 
 
 class QuickIDE(tk.Tk):
     def __init__(self):
         super().__init__()
         self.title("QuickIDE - Quantum DSL GUI")
-        self.geometry("1300x850")
+        self.geometry("1400x900")
         self._init_layout()
 
     def _init_layout(self):
@@ -39,7 +40,10 @@ class QuickIDE(tk.Tk):
         menubar.add_cascade(label="File", menu=filemenu)
 
         runmenu = tk.Menu(menubar, tearoff=0)
-        runmenu.add_command(label="Compile + Visualize", command=self.run_simulation)
+        runmenu.add_command(label="Parse AST", command=self.run_ast)
+        runmenu.add_command(label="Compile IR", command=self.run_compile)
+        runmenu.add_command(label="Visualize", command=self.run_visualize)
+        runmenu.add_command(label="Simulate", command=self.run_simulate)
         menubar.add_cascade(label="Run", menu=runmenu)
 
         viewmenu = tk.Menu(menubar, tearoff=0)
@@ -54,7 +58,10 @@ class QuickIDE(tk.Tk):
 
     def _create_toolbar(self):
         toolbar = ttk.Frame(self, padding=5)
-        ttk.Button(toolbar, text="Run", command=self.run_simulation).pack(side=tk.LEFT, padx=4)
+        ttk.Button(toolbar, text="Parse AST", command=self.run_ast).pack(side=tk.LEFT, padx=4)
+        ttk.Button(toolbar, text="Compile IR", command=self.run_compile).pack(side=tk.LEFT, padx=4)
+        ttk.Button(toolbar, text="Visualize", command=self.run_visualize).pack(side=tk.LEFT, padx=4)
+        ttk.Button(toolbar, text="Simulate", command=self.run_simulate).pack(side=tk.LEFT, padx=4)
         ttk.Button(toolbar, text="Clear Console", command=self.clear_console).pack(side=tk.LEFT, padx=4)
         ttk.Button(toolbar, text="Open Tutorial", command=self.load_tutorial).pack(side=tk.LEFT, padx=4)
         toolbar.pack(side=tk.TOP, fill=tk.X)
@@ -62,33 +69,43 @@ class QuickIDE(tk.Tk):
     def _create_panels(self):
         self.main_panes = ttk.Panedwindow(self, orient=tk.HORIZONTAL)
 
-        # Left side: Editor
-        editor_frame = ttk.Labelframe(self.main_panes, text="QuCPL Code Editor")
+        # Left Pane: Editor + Circuit Visualizer
+        left_pane = ttk.Panedwindow(self.main_panes, orient=tk.VERTICAL)
+
+        editor_frame = ttk.Labelframe(left_pane, text="QuCPL Code Editor")
         self.editor = CodeEditor(editor_frame)
         self.editor.pack(fill=tk.BOTH, expand=True)
-        self.main_panes.add(editor_frame, weight=3)
+        left_pane.add(editor_frame, weight=3)
 
-        # Right side: Output/Visuals
+        visualizer_frame = ttk.Labelframe(left_pane, text="Circuit Visualization")
+        self.visualizer = CircuitVisualizer(visualizer_frame)
+        self.visualizer.pack(fill=tk.BOTH, expand=True)
+        left_pane.add(visualizer_frame, weight=2)
+
+        self.main_panes.add(left_pane, weight=3)
+
+        # Right Pane: Viewer, Histogram, Tutorials
         right_pane = ttk.Panedwindow(self.main_panes, orient=tk.VERTICAL)
 
         viewer_frame = ttk.Labelframe(right_pane, text="AST / IR Viewer")
         self.viewer = ViewerPanel(viewer_frame)
         self.viewer.pack(fill=tk.BOTH, expand=True)
-        right_pane.add(viewer_frame, weight=1)
+        right_pane.add(viewer_frame, weight=2)
 
-        visualizer_frame = ttk.Labelframe(right_pane, text="Circuit Visualization")
-        self.visualizer = CircuitVisualizer(visualizer_frame)
-        self.visualizer.pack(fill=tk.BOTH, expand=True)
-        right_pane.add(visualizer_frame, weight=1)
+        histogram_frame = ttk.Labelframe(right_pane, text="Simulation Histogram")
+        self.histogram = HistogramViewer(histogram_frame)
+        self.histogram.pack(fill=tk.BOTH, expand=True)
+        right_pane.add(histogram_frame, weight=2)
 
-        docs_frame = ttk.Labelframe(right_pane, text="Tutorials")
-        self.tutorial_viewer = TutorialViewer(docs_frame)
+        tutorial_frame = ttk.Labelframe(right_pane, text="Tutorials")
+        self.tutorial_viewer = TutorialViewer(tutorial_frame)
         self.tutorial_viewer.pack(fill=tk.BOTH, expand=True)
-        right_pane.add(docs_frame, weight=1)
+        right_pane.add(tutorial_frame, weight=1)  # Shrunk weight
 
-        self.main_panes.add(right_pane, weight=5)
+        self.main_panes.add(right_pane, weight=2)
         self.main_panes.pack(fill=tk.BOTH, expand=True)
 
+        # Console at Bottom
         console_frame = ttk.Labelframe(self, text="Console Output")
         self.console = TerminalOutput(console_frame)
         self.console.pack(fill=tk.BOTH, expand=True)
@@ -106,29 +123,57 @@ class QuickIDE(tk.Tk):
         if path:
             self.log(f"[INFO] Saved file: {path}\n")
 
-    def run_simulation(self):
+    def run_ast(self):
         code = self.editor.get_code()
         if not code:
             messagebox.showwarning("No Input", "Editor is empty. Please enter some QuCPL code.")
             return
         try:
             ast = parse_qucpl(code)
-            ir = ast_to_ir(ast)
-
             self.viewer.display_ast(ast)
-            self.viewer.display_ir(ir)
-            self.visualizer.display_circuit(ir, title="Compiled Circuit")
-            visualize_circuit(ir, "Generated Circuit")
-            simulate(ir, title="Simulation")
-            self.log("[SUCCESS] Compilation and simulation completed.\n")
+            self.ast = ast
+            self.log("[SUCCESS] AST generated.\n")
         except Exception as e:
-            self.log(f"[ERROR] {e}\n")
+            self.log(f"[ERROR] AST Error: {e}\n")
+
+    def run_compile(self):
+        try:
+            if not hasattr(self, 'ast'):
+                self.run_ast()
+            ir = ast_to_ir(self.ast)
+            self.ir = ir
+            self.viewer.display_ir(ir)
+            self.log("[SUCCESS] IR compilation done.\n")
+        except Exception as e:
+            self.log(f"[ERROR] Compilation Error: {e}\n")
+
+    def run_visualize(self):
+        try:
+            if not hasattr(self, 'ir'):
+                self.run_compile()
+            self.visualizer.display_circuit(self.ir, title="Compiled Circuit")
+            visualize_circuit(self.ir, "Compiled Circuit")
+            self.log("[SUCCESS] Circuit visualized.\n")
+        except Exception as e:
+            self.log(f"[ERROR] Visualization Error: {e}\n")
+
+    def run_simulate(self):
+        try:
+            if not hasattr(self, 'ir'):
+                self.run_compile()
+            histogram_img = simulate(self.ir, title="Simulation")
+            self.histogram.display_histogram(histogram_img)
+            self.log("[SUCCESS] Simulation complete.\n")
+        except Exception as e:
+            self.log(f"[ERROR] Simulation Error: {e}\n")
 
     def clear_console(self):
-        self.console.clear()
+        if hasattr(self, 'console'):
+            self.console.clear()
 
     def log(self, message):
-        self.console.log(message)
+        if hasattr(self, 'console'):
+            self.console.log(message)
 
     def load_tutorial(self):
         self.tutorial_viewer.load_tutorial()
