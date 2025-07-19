@@ -1,0 +1,159 @@
+{
+  "qubits": 3,
+  "cregs": 3,
+  "oper": [
+    {
+      "op": "convert",
+      "value": 5
+    },
+    {
+      "gate": "h",
+      "qubits": [
+        0
+      ]
+    },
+    {
+      "gate": "x",
+      "qubits": [
+        0
+      ]
+    },
+    {
+      "gate": "barrier",
+      "qubits": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "gate": "h",
+      "qubits": [
+        1
+      ]
+    },
+    {
+      "gate": "cx",
+      "qubits": [
+        1,
+        2
+      ]
+    },
+    {
+      "gate": "barrier",
+      "qubits": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "gate": "cx",
+      "qubits": [
+        0,
+        1
+      ]
+    },
+    {
+      "gate": "h",
+      "qubits": [
+        0
+      ]
+    },
+    {
+      "gate": "barrier",
+      "qubits": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "gate": "measure",
+      "qubits": [
+        0
+      ],
+      "cregs": [
+        0
+      ]
+    },
+    {
+      "gate": "measure",
+      "qubits": [
+        1
+      ],
+      "cregs": [
+        1
+      ]
+    },
+    {
+      "gate": "print",
+      "args": [
+        "c0"
+      ]
+    },
+    {
+      "gate": "print",
+      "args": [
+        "c1"
+      ]
+    },
+    {
+      "gate": "barrier",
+      "qubits": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "gate": "if",
+      "creg": 1,
+      "val": 1,
+      "body": [
+        {
+          "gate": "x",
+          "qubits": [
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "gate": "if",
+      "creg": 0,
+      "val": 1,
+      "body": [
+        {
+          "gate": "x",
+          "qubits": [
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "gate": "barrier",
+      "qubits": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "gate": "measure",
+      "qubits": [
+        2
+      ],
+      "cregs": [
+        2
+      ]
+    },
+    {
+      "gate": "print",
+      "args": [
+        "c2"
+      ]
+    }
+  ]
+}

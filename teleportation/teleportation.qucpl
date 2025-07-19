@@ -1,0 +1,25 @@
+convert 5;
+qubit alice, bob, aux;
+qop h alice;
+qop x alice;
+barrier alice, bob, aux;
+qop h bob;
+qop cx bob, aux;
+barrier alice, bob, aux;
+qop cx alice, bob;
+qop h alice;
+barrier alice, bob, aux;
+measure alice -> c0;
+measure bob   -> c1;
+print c0;
+print c1;
+barrier;
+if(c1==1){
+    qop x aux;
+}
+if(c0==1){
+    qop x aux;
+}
+barrier;
+measure aux -> c2;
+print c2;

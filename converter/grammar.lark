@@ -1,0 +1,7 @@
+start: command
+
+command: "convert" DECIMAL     -> convert_command
+
+DECIMAL: /[0-9]+/
+
+%ignore " "

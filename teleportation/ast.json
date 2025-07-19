@@ -1,0 +1,212 @@
+{
+  "type": "Program",
+  "body": [
+    {
+      "type": "Convert",
+      "value": 5
+    },
+    {
+      "type": "QubitDecl",
+      "qubits": [
+        [
+          "alice",
+          "bob",
+          "aux"
+        ]
+      ]
+    },
+    {
+      "type": "QuantumOp",
+      "gate": "h",
+      "qubits": [
+        [
+          "alice"
+        ]
+      ]
+    },
+    {
+      "type": "QuantumOp",
+      "gate": "x",
+      "qubits": [
+        [
+          "alice"
+        ]
+      ]
+    },
+    {
+      "type": "Barrier",
+      "qubits": [
+        [
+          "alice",
+          "bob",
+          "aux"
+        ]
+      ]
+    },
+    {
+      "type": "QuantumOp",
+      "gate": "h",
+      "qubits": [
+        [
+          "bob"
+        ]
+      ]
+    },
+    {
+      "type": "QuantumOp",
+      "gate": "cx",
+      "qubits": [
+        [
+          "bob",
+          "aux"
+        ]
+      ]
+    },
+    {
+      "type": "Barrier",
+      "qubits": [
+        [
+          "alice",
+          "bob",
+          "aux"
+        ]
+      ]
+    },
+    {
+      "type": "QuantumOp",
+      "gate": "cx",
+      "qubits": [
+        [
+          "alice",
+          "bob"
+        ]
+      ]
+    },
+    {
+      "type": "QuantumOp",
+      "gate": "h",
+      "qubits": [
+        [
+          "alice"
+        ]
+      ]
+    },
+    {
+      "type": "Barrier",
+      "qubits": [
+        [
+          "alice",
+          "bob",
+          "aux"
+        ]
+      ]
+    },
+    {
+      "type": "Measure",
+      "qubits": [
+        [
+          "alice"
+        ]
+      ],
+      "classical": [
+        [
+          "c0"
+        ]
+      ]
+    },
+    {
+      "type": "Measure",
+      "qubits": [
+        [
+          "bob"
+        ]
+      ],
+      "classical": [
+        [
+          "c1"
+        ]
+      ]
+    },
+    {
+      "type": "Print",
+      "args": [
+        [
+          "c0"
+        ]
+      ]
+    },
+    {
+      "type": "Print",
+      "args": [
+        [
+          "c1"
+        ]
+      ]
+    },
+    {
+      "type": "Barrier",
+      "qubits": []
+    },
+    {
+      "type": "If",
+      "condition": {
+        "type": "Condition",
+        "var": "c1",
+        "value": 1
+      },
+      "then": {
+        "type": "QuantumOp",
+        "gate": "x",
+        "qubits": [
+          [
+            "aux"
+          ]
+        ]
+      },
+      "else": null
+    },
+    {
+      "type": "If",
+      "condition": {
+        "type": "Condition",
+        "var": "c0",
+        "value": 1
+      },
+      "then": {
+        "type": "QuantumOp",
+        "gate": "x",
+        "qubits": [
+          [
+            "aux"
+          ]
+        ]
+      },
+      "else": null
+    },
+    {
+      "type": "Barrier",
+      "qubits": []
+    },
+    {
+      "type": "Measure",
+      "qubits": [
+        [
+          "aux"
+        ]
+      ],
+      "classical": [
+        [
+          "c2"
+        ]
+      ]
+    },
+    {
+      "type": "Print",
+      "args": [
+        [
+          "c2"
+        ]
+      ]
+    }
+  ]
+}
